@@ -4,7 +4,7 @@ export const getAllPublications = async (id) => {
     try {
         const response = api.get("publicaciones/", {
             params: {
-                metodoId: id {/* el id se sustituye al llamar a la función getAllPublications, dentro del useEffect de Publications */}
+                metodoId: id //{/* el id se sustituye al llamar a la función getAllPublications, dentro del useEffect de Publications */}
             }
         })
         return response
