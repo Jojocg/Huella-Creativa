@@ -38,10 +38,11 @@ const router = createBrowserRouter([
                 ],
             },
             {
-                path: "/publications/:metodoId",
+                path: "/publications/:metodoId", 
                 element: <Publications />,
                 loader: checkAuthLoader, //se puede comentar esta línea cuando queramos probar sin meter el usuario
             },
+            
         ],
     },
 ]);

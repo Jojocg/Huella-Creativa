@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 import { UserContext } from "../../../Context/user";
 
-const Signup = () => {
+function Signup () {
     const [formData, setFormData] = useState({
         nombre: "",
         email: "",

@@ -20,7 +20,7 @@ const Header = () => {
                     <ul className="navbar">
                         <li className="traditional">Tradicional</li>
                         <ul>
-                            <li><Link to="">Ilustración</Link></li>
+                            <li><Link to="/publications/1">Ilustración</Link></li>
                             <li><Link to="">Diseño Gráfico</Link></li>
                             <li><Link to="">Escultura</Link></li>
                             <li><Link to="">Modelado 3D</Link></li>

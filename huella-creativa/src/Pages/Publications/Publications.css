@@ -1,0 +1,14 @@
+.publication-card {
+    cursor: pointer;
+    /* Indicates the item is clickable */
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.publication-card:hover {
+    background-color: #f5f5f5;
+    /* Light hover effect */
+}
