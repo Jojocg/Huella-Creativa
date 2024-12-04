@@ -17,50 +17,26 @@ const Header = () => {
         if (user) {
             return (
                 <>
-                    <nav>
-                        <div id='traditional'>
+                    <ul className="navbar">
+                        <li className="traditional">Tradicional</li>
                         <ul>
-                            <li className="default">Tradicional</li>
-                            <li>
-                                <Link to="">Ilustración</Link>
-                            </li>
-                            <li>
-                                <Link to="">Diseño Gráfico</Link>
-                            </li>
-                            <li>
-                                <Link to="">Escultura</Link>
-                            </li>
-                            <li>
-                                <Link to="">Modelado 3D</Link>
-                            </li>
-                            <li>
-                                <Link to="">Animación</Link>
-                            </li>
+                            <li><Link to="">Ilustración</Link></li>
+                            <li><Link to="">Diseño Gráfico</Link></li>
+                            <li><Link to="">Escultura</Link></li>
+                            <li><Link to="">Modelado 3D</Link></li>
+                            <li><Link to="">Animación</Link></li>
                         </ul>
-                        </div>
-                        <div id='digital'>
-                            <ul>
-                                <li className="default">Digital</li>
-                                <li>
-                                    <Link to="/publications/6">Ilustración</Link>
-                                </li>
-                                <li>
-                                    <Link to="">Diseño Gráfico</Link>
-                                </li>
-                                <li>
-                                    <Link to="">Escultura</Link>
-                                </li>
-                                <li>
-                                    <Link to="">Modelado 3D</Link>
-                                </li>
-                                <li>
-                                    <Link to="">Animación</Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
+                        <li className="digital">Digital</li>
+                        <ul>
+                            <li><Link to="/publications/6">Ilustración</Link></li>
+                            <li><Link to="">Diseño Gráfico</Link></li>
+                            <li><Link to="">Escultura</Link></li>
+                            <li><Link to="">Modelado 3D</Link></li>
+                            <li><Link to="">Animación</Link></li>
+                        </ul>
+                    </ul>
                     <div>
-                    {/* localStorage.getItem("token") &&  */(
+                        {localStorage.getItem("token") && (  //se puede comentar esta línea cuando queramos probar sin meter el usuario
                         <>
                             <h3>{user}</h3>
                             {/* <button onClick={logout}>

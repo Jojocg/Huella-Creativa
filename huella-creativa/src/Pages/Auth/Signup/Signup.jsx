@@ -35,7 +35,7 @@ const Signup = () => {
                     response;
                     localStorage.setItem("token", response.data.token);
                     setUser(formData.nombre);
-                    navigate("");
+                    navigate("/");
                 }
             } else {
                 setError("Las contraseñas no coinciden");

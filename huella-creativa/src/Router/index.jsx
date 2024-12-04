@@ -40,7 +40,7 @@ const router = createBrowserRouter([
             {
                 path: "/publications/:metodoId",
                 element: <Publications />,
-                /* loader: checkAuthLoader, */
+                loader: checkAuthLoader, //se puede comentar esta línea cuando queramos probar sin meter el usuario
             },
         ],
     },

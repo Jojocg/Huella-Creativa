@@ -13,14 +13,15 @@ const Login = () => {
 
     const navigate = useNavigate();
 
-    const handleLogin = async () => {
+    const handleLogin = async (e) => {
         try {
+            e.preventDefault();
             const response = await login({ email, password });
             if (response) {
                 localStorage.setItem("token", response.data.token);
                 setUser(response.data.usuario) //esto porque lo añadimos en nuestra API como respuesta
                 console.log(user) //revisar esta línea
-                navigate("");
+                navigate("/");
             } else {
                 setError("Revisa los datos introducidos");
             }
