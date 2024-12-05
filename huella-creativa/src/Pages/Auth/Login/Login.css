@@ -1,0 +1,227 @@
+/* General Styles */
+body {
+    font-family: "Fractul", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #0F1020;
+    background-color: #FFFFFA;
+}
+
+/* Sección de Login */
+.login {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Fondo */
+.background .fondo-web {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    height: auto;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+/* Mensaje de bienvenida */
+.SayHi h1 {
+    font-size: 3.5rem;
+    font-family: "Fractul", sans-serif;
+    font-weight: 700;
+    color: #0F1020;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.SayHi h1 .highlight {
+    color: #BAF241;
+}
+
+/* Formulario de inicio de sesión */
+.login-form {
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 2;
+}
+
+.input-wrapper {
+    width: 100%;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid #4037FF;
+    outline: none;
+    font-size: 1rem;
+    font-family: "Outfit", sans-serif;
+    color: #5A23AD;
+    background-color: rgba(255, 255, 250, 0.8);
+    transition: all 0.3s ease;
+}
+
+.input-wrapper input:focus {
+    border-color: #BAF241;
+    background-color: #FFFFFF;
+}
+
+/* Botón de envío */
+.button_login {
+    width: 100%;
+    max-width: 120px;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: #FFFFFF;
+    background-color: #4037FF;
+    font-family: "Outfit", sans-serif;
+    cursor: pointer;
+}
+
+
+
+.button_login:hover {
+background-color: #0F1020;
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button_login a {
+color: #FFFFFF;
+text-decoration: none;
+}
+
+/* Círculo verde como separador */
+.greenCircle {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background-color: #BAF241;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 20px auto;
+position: relative;
+z-index: 1;
+}
+
+.greenCircle .alternativa {
+font-family: "Outfit", sans-serif;
+font-size: 1.5rem;
+color: #0F1020;
+font-weight: bold;
+}
+
+/* Botón Gmail */
+.google-login {
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+.button_google {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+padding: 12px 25px;
+border-radius: 25px;
+border: 2px solid #4037FF;
+background-color: transparent;
+font-size: 1rem;
+font-family: "Outfit", sans-serif;
+color: #4037FF;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.button_google:hover {
+background-color: #4037FF;
+color: #FFFFFF;
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.google-icon {
+width: 20px;
+height: 20px;
+}
+
+/* Paginador decorativo */
+.pagination-dots {
+display: flex;
+justify-content: center;
+gap: 10px;
+margin: 20px 0;
+}
+
+.pagination-dots .dot {
+width: 10px;
+height: 10px;
+background-color: #D8D8D8;
+border-radius: 50%;
+transition: all 0.3s ease;
+}
+
+.pagination-dots .dot.active {
+background-color: #BAF241;
+transform: scale(1.2);
+}
+
+/* Texto de registro */
+.signup-prompt {
+margin-top: 20px;
+font-size: 1rem;
+font-family: "Outfit", sans-serif;
+text-align: center;
+}
+
+.signup-prompt .signup-link {
+color: #4037FF;
+text-decoration: none;
+font-weight: bold;
+}
+
+.signup-prompt .signup-link:hover {
+text-decoration: underline;
+}
+
+/* Botón Regístrate */
+.button_register {
+width: 100%;
+max-width: 200px;
+margin-top: 20px;
+padding: 12px 25px;
+border-radius: 25px;
+border: none;
+background-color: #4037FF;
+color: #FFFFFF;
+font-size: 1rem;
+font-family: "Outfit", sans-serif;
+cursor: pointer;
+transition: all 0.3s ease;
+text-align: center;
+}
+
+.button_register a {
+color: #FFFFFF;
+text-decoration: none;
+}
+
+.button_register:hover {
+background-color: #0F1020;
+transform: translateY(-2px);
+}

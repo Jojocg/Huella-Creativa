@@ -18,12 +18,12 @@ const Header = () => {
             return (
                 <ul className="menu">
                     {/* Categoría Tradicional */}
-                    <ul
+                    <li
                         className={`menu-category ${activeMenu === "tradicional" ? "active" : ""}`}
                         onMouseEnter={() => setActiveMenu("tradicional")}
                         onMouseLeave={() => setActiveMenu(null)}
                     >
-                        <li className="category-title">Tradicional</li>
+                        <span className="category-title">Tradicional</span>
                         {activeMenu === "tradicional" && (
                             <ul className="dropdown">
                                 <li><Link to="/publications/1">Ilustración</Link></li>
@@ -33,14 +33,14 @@ const Header = () => {
                                 <li><Link to="">Animación</Link></li>
                             </ul>
                         )}
-                    </ul>
+                    </li>
                     {/* Categoría Digital */}
-                    <ul
+                    <li
                         className={`menu-category ${activeMenu === "digital" ? "active" : ""}`}
                         onMouseEnter={() => setActiveMenu("digital")}
                         onMouseLeave={() => setActiveMenu(null)}
                     >
-                        <li className="category-title">Digital</li>
+                        <span className="category-title">Digital</span>
                         {activeMenu === "digital" && (
                             <ul className="dropdown">
                                 <li><Link to="/publications/6">Ilustración</Link></li>
@@ -50,7 +50,7 @@ const Header = () => {
                                 <li><Link to="">Animación</Link></li>
                             </ul>
                         )}
-                    </ul>
+                    </li>
                 </ul>
             );
         }
@@ -70,7 +70,7 @@ const Header = () => {
                 // Mostrar avatar y nombre del usuario cuando esté logueado
                 <div className="user-avatar">
                     <img src="/AVATAR.png" alt="Avatar" className="avatar-icon" />
-                    <h3>{user}</h3>
+                    {/* <h3>{user}</h3> */}
                 </div>
             );
         }
@@ -91,13 +91,15 @@ const Header = () => {
                     {loadMethods()}
                 </nav>
 
-                {/* Controles del usuario */}
-                <div className="user-controls">
                     {/* Modo oscuro */}
                     <div className="modo">
-                        <img src="/modos-29.svg" alt="Modo oscuro" />
+                        <Link to="/dark">
+                        <img src="/modos-28.svg" alt="Modo oscuro" />
+                        </Link>
                     </div>
 
+                {/* Controles del usuario */}
+                <div className="user-controls">
                     {/* Botones o avatar del usuario */}
                     <div className="login-register">
                         {loadAuth()}

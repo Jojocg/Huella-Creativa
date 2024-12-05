@@ -1,43 +1,32 @@
-import { Link } from "react-router-dom";
 
-import "./Home.css";
+import './HomeLogin.css';
 
-
-
-const Home = () => {
-
+const HomeLogin = () => {
     return (
         <>
-            {/* Hero Section */}
+            {/* Hero Section */}   
             <section className="hero">
-                {/* Contenedor de imágenes de fondo */}
-                <div className="hero-images">
-                    <img
-                        className="fondo-web-izq"
-                        src="/fondo_izq.png"
-                        alt="Decoración izquierda"
-                    />
-                    <img
-                        className="fondo-web-dch"
-                        src="/fondo_dch.png"
-                        alt="Decoración derecha"
-                    />
-                </div>
+    {/* Contenedor de imágenes de fondo */}
+    <div className="hero-images">
+        <img
+            className="fondo-web-izq"
+            src="/fondo_izq.png"
+            alt="Decoración izquierda"
+        />
+        <img
+            className="fondo-web-dch"
+            src="/fondo_dch.png"
+            alt="Decoración derecha"
+        />
+    </div>
 
-                {/* Contenido del Hero */}
-                <h1>
-                    ¡Tu viaje creativo <br /> <span className="highlight">comienza aquí!</span>
-                </h1>
-                <p>
-                    Conecta con artistas, domina nuevas herramientas y transforma tu
-                    creatividad en talento. Este es el lugar donde aprender y fomentar tu
-                    creatividad desde cualquier rama.
-                </p>
-                <div className="hero-buttons">
-                    <Link to="auth/login"> <button className="btn-outline">Inicia sesión</button></Link>
-                    <Link to="auth/login/auth/signup"><button className="btn-primary">Regístrate</button></Link>
-                </div>
-            </section>
+    {/* Contenido del Hero */}
+    
+    <div className="hero-buttons">
+        <button className="btn-outline">Inicia sesión</button>
+        <button className="btn-primary">Regístrate</button>
+    </div>
+</section>
 
             {/* Gallery Section */}
             <section className="gallery">
@@ -80,19 +69,14 @@ const Home = () => {
 
             {/* Call to Action */}
             <section className="cta">
-                <h2>Si quieres seguir viendo, <span className="highlight">¡regístrate!</span></h2>
+                <h2>Si quieres seguir viendo, regístrate</h2>
                 <div className="cta-buttons">
-                    <Link to="auth/login"><button className="btn-outline">Inicia sesión</button></Link>
-                    <Link to="auth/login/auth/signup"><button className="btn-primary">Regístrate</button></Link>
+                    <button className="btn-outline">Inicia sesión</button>
+                    <button className="btn-primary">Regístrate</button>
                 </div>
             </section>
-
-
-
         </>
-
-
     );
 };
 
-export default Home;
+export default HomeLogin;

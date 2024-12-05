@@ -91,8 +91,8 @@
   
   .socials {
     text-align: center;
-    margin-top: 15%;
-    margin-right: 2%;
+    margin-top: 10%;
+    margin-right: 4%;
   }
   
   
@@ -118,7 +118,93 @@
   }
   
   
+ 
   
+
+
+
+    /*GATITO*/
+    :root {
+      --green: #BAF241;
+      --white: #ffffff;
+      --blue: #4037FF;
+      --purple: #5A23AD;
+      --cyan: #BAF241;
+    }
+    
+    /* Contenedor Principal */
+    .bongo-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      height: auto; /* Ajusta según necesites */
+      z-index: 1; /* Para asegurarte de que esté sobre otros elementos */
+      overflow: hidden;
+    }
+    
+    .container {
+      width: 100%;
+      height: auto;
+    }
+    
+    svg {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+    
+    /* Estilos del SVG */
+    #bongo-cat {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 4;
+    }
+    
+    #bongo-cat .laptop-cover,
+    #bongo-cat .headphone .band {
+      fill: none;
+    }
+    
+    #bongo-cat .paw,
+    #bongo-cat .head {
+      stroke: var(--blue);
+    }
+    
+    #bongo-cat .laptop-keyboard {
+      stroke-width: 2;
+    }
+    
+    #bongo-cat .terminal-code {
+      stroke-width: 5;
+    }
+    
+    #bongo-cat .music .note,
+    #bongo-cat .laptop-base,
+    #bongo-cat .laptop-cover,
+    #bongo-cat .paw .pads {
+      stroke: var(--green);
+    }
+    
+    #bongo-cat .table line,
+    #bongo-cat .headphone .band,
+    #bongo-cat .headphone .speaker path:nth-child(3) {
+      stroke: var(--purple);
+    }
+    
+    #bongo-cat .terminal-frame,
+    #bongo-cat .laptop-keyboard,
+    #bongo-cat .headphone .speaker path:nth-child(2) {
+      stroke: var(--blue);
+    }
+    
+    #bongo-cat .terminal-code,
+    #bongo-cat .headphone .speaker path:first-child {
+      stroke: var(--cyan);
+    }
+    
   
   
   

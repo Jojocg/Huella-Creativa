@@ -5,6 +5,7 @@ import NotFound from "../Pages/NotFound/NotFound";
 import Login from "../Pages/Auth/Login/Login";
 import Signup from "../Pages/Auth/Signup/Signup";
 import Publications from "../Pages/Publications/Publications";
+import HomeLogin from "../Pages/HomeLogin/HomeLogin";
 
 const checkAuthLoader = () => {
     const token = localStorage.getItem("token");
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
                         element: <Login />,
                     },
                 ],
+            },
+            {
+                path: "homeLogin",
+                element: <HomeLogin />,
             },
             {
                 path: "/publications/:metodoId", 

@@ -1,12 +1,10 @@
 /* General Styles */
-  
-
 
 .hero h1 {
     font-size: 4.5rem;
     font-family: 'Fractul', sans-serif;
     font-weight: 700;
-    color: #0F1020; /* Color principal del texto */
+    color: #0F1020; 
     margin-bottom: 20px;
     line-height: 105%;
 }
@@ -20,7 +18,7 @@ h1 span.highlight {
     font-family: 'Outfit', sans-serif;
     margin-left: 20%;
     margin-right: 20%;
-    color: #363636; /* Color gris para el texto */
+    color: #363636;
     margin-bottom: 30px;
 }
 
@@ -59,52 +57,49 @@ button {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
- 
+
+
   
   /* Hero Section */
   .hero {
     text-align: center;
     padding: 50px 20px;
     position: relative;
-    overflow: visible; /* Oculta cualquier desbordamiento */
-  }
-  
-  .hero-images {
+    overflow: visible; /* Para que las imagenes de fondo se vean en otro bloque */
+}
+
+.hero-images {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
-    height: auto;
-    z-index: -1; /* Coloca las imágenes detrás del texto */
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
     display: flex;
     justify-content: space-between; /* Coloca las imágenes en los extremos */
+    align-items: center; /* Asegura que las imágenes se centren verticalmente */
     pointer-events: none; /* Permite interactuar con los elementos superpuestos */
 }
 
 .fondo-web-izq,
 .fondo-web-dch {
-    width: 50%;
-    height: auto;   
+    width: 22%; 
+    height: auto; 
+    object-fit: cover; /* Asegura que las imágenes no se deformen */
 }
-  
-  .fondo-web-izq {
-    left: 0;
-    width: 50%; /* Ajusta según el tamaño deseado */
-    height: auto;
 
-  }
-  
-  
-  .fondo-web-dch {
-    right: 0;
-    width: 50%; /* Ajusta según el tamaño deseado */
-    height: auto;
+.fondo-web-izq {
+    position: relative;
+    left: 0; /* Mantiene la imagen a la izquierda */
+}
+
+.fondo-web-dch {
+    position: relative;
+    right: 0; /* Mantiene la imagen a la derecha */
     rotate: 180deg;
-    transform: scaleX(-1);
-  }
-  
-  
-  
+    transform: scaleX(-1); /* Invierte la imagen horizontalmente */
+}
+
   
   
   /* Galería */
@@ -173,12 +168,12 @@ button {
   .name {
     font-size: 1rem;
     font-weight: 700;
-    color: #4037FF; /* Azul del nombre */
+    color: #4037FF; 
   }
   
   .description {
     font-size: 1.2rem;
-    color: #5A23AD; /* Morado suave */
+    color: #5A23AD; 
     margin: 0 ;
   }
   .stats {
@@ -193,7 +188,7 @@ button {
     display: flex;
     align-items: center;
     gap: 5px; /* Espaciado entre el corazón y el número */
-    color: #747474; /* Gris para el texto */
+    color: #747474; 
   }
   
   .stats .likes .icon {
@@ -232,7 +227,7 @@ button {
     left: 0;
     width: 40px;
     height: 40px;
-    background-image: url('/flechas-21.svg'); /* Nueva imagen */
+    background-image: url('/flechas-21.svg'); /* Llamada a la nueva imagen */
     background-size: cover;
     background-position: center;
     opacity: 0;
@@ -251,11 +246,11 @@ button {
   
   
   
-  /* Separator */
+  /* PUNTOS SUSPENSIVOS */
   .separator {
     display: flex;
     justify-content: center;
-    margin: 5%;
+    margin-top: 3%;
   }
   
   .separator img {
@@ -270,14 +265,21 @@ button {
     justify-content: center;
     text-align: center;
     padding: 10px 20px;
-    margin: 5%;
+    margin-bottom: 3%;
   }
   
+
+
+  /* CTA */
   .cta h2 {
     font-size: 3rem;
     margin-bottom: 2%;
     color: #0F1020;
   }
+
+  h2 span.highlight {
+    color: #4037FF; /* Color verde para la palabra resaltada */
+}
   
   .cta-buttons {
     display: flex;
@@ -315,3 +317,14 @@ button {
   }
   
  
+
+
+
+
+
+
+
+
+
+
+
