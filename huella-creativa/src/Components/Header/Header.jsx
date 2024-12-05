@@ -38,7 +38,7 @@ const Header = () => {
                     <div>
                         {localStorage.getItem("token") && (  //se puede comentar esta línea cuando queramos probar sin meter el usuario
                         <>
-                            <h3>{user}</h3>
+                            <h3>{user.nombre}</h3>
                             {/* <button onClick={logout}>
                                 <h3>Logout</h3>
                             </button> */}

@@ -16,6 +16,7 @@ const Publications = () => {
         const getPublications = async () => {
             const response = await getAllPublications(metodoId) 
             setPublications(response.data)
+            
         }
         getPublications()
     },[metodoId])
@@ -33,16 +34,35 @@ const Publications = () => {
     };
 
     const displayPublications = () => {
-        return publications.map((publication) => (
-            <div key={publication.id} className="publication-card" onClick={() => openModal(publication)} /* Trigger the modal on clicking anywhere in the publication*/>  
-                <h3>{publication.titulo}</h3> <p>{publication.contenido}</p> <img src={publication.imagen} /> </div>))
+
+        return publications.map((publication) => {
+            // Step 1: Parse the date (without using toISOString) and format it manually
+            const creationDate = new Date(publication.fecha_publicacion);
+
+            const year = creationDate.getFullYear(); // Get the year
+            const month = String(creationDate.getMonth() + 1).padStart(2, '0'); // Get the month, add 1 (months start from 0)
+            const day = String(creationDate.getDate()).padStart(2, '0'); // Get the day, and ensure it's 2 digits
+
+            const formattedDate = `${year}-${month}-${day}`; // Format as "YYYY-MM-DD"
+
+            // Step 2: Render the publication card
+            return (
+                <div key={publication.id} className="publication-card" onClick={() => openModal(publication)}>
+                    <h3>{publication.titulo}</h3>
+                    <p>{publication.publico.privado.nombre}</p>
+                    <p>{formattedDate}</p> {/* This will display the formatted date */}
+                    <img src={publication.imagen} />
+                </div>
+            );
+        });
+           
     }
 
     return (
         <div>
             <h3>{publications[0]?.metodo.metodo}</h3>
             <h4>Ilustración</h4>
-            <button>Crear publicación</button>
+            <Link to={`/publications/${metodoId}/create`} ><button>Crear publicación</button></Link>
             <hr />
             {displayPublications()}
             {showModal && (

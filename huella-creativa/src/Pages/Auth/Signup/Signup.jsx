@@ -34,7 +34,7 @@ function Signup () {
                     console.log(formData); //revisar este console.log
                     response;
                     localStorage.setItem("token", response.data.token);
-                    setUser(formData.nombre);
+                    setUser({ nombre: formData.nombre, publicoId: response.data.publicoId });
                     navigate("/");
                 }
             } else {

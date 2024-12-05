@@ -19,7 +19,7 @@ const Login = () => {
             const response = await login({ email, password });
             if (response) {
                 localStorage.setItem("token", response.data.token);
-                setUser(response.data.usuario) //esto porque lo añadimos en nuestra API como respuesta
+                setUser({nombre: response.data.usuario, publicoId: response.data.publicoId}) //esto porque lo añadimos en nuestra API como respuesta//añadido
                 console.log(user) //revisar esta línea
                 navigate("/");
             } else {

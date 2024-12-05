@@ -5,6 +5,7 @@ import NotFound from "../Pages/NotFound/NotFound";
 import Login from "../Pages/Auth/Login/Login";
 import Signup from "../Pages/Auth/Signup/Signup";
 import Publications from "../Pages/Publications/Publications";
+import CreatePublication from "../Pages/CreatePublication/CreatePublication";
 
 const checkAuthLoader = () => {
     const token = localStorage.getItem("token");
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
             {
                 path: "/publications/:metodoId", 
                 element: <Publications />,
+                loader: checkAuthLoader, //se puede comentar esta línea cuando queramos probar sin meter el usuario
+            },
+            {
+                path: "/publications/:metodoId/create",
+                element: <CreatePublication />,
                 loader: checkAuthLoader, //se puede comentar esta línea cuando queramos probar sin meter el usuario
             },
             
