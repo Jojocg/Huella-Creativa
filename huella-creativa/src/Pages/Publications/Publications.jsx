@@ -15,6 +15,7 @@ const Publications = () => {
     useEffect(() => {
         const getPublications = async () => {
             const response = await getAllPublications(metodoId) 
+            console.log(response.data)
             setPublications(response.data)
             
         }
@@ -45,11 +46,18 @@ const Publications = () => {
 
             const formattedDate = `${year}-${month}-${day}`; // Format as "YYYY-MM-DD"
 
+            /* const materials = publication.metodo.materiales;
+
+            const result = materials.map(() => {
+                return;
+            }) Mirar esto para poder mapear los materiales y que los enseñe*/ 
+
             // Step 2: Render the publication card
             return (
                 <div key={publication.id} className="publication-card" onClick={() => openModal(publication)}>
                     <h3>{publication.titulo}</h3>
                     <p>{publication.publico.privado.nombre}</p>
+                    <p>{publication.metodo.materiales[0].nombre}</p>
                     <p>{formattedDate}</p> {/* This will display the formatted date */}
                     <img src={publication.imagen} />
                 </div>

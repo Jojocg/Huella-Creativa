@@ -7,7 +7,7 @@ export const getAllPublications = async (id) => {
                 metodoId: id //{/* el id se sustituye al llamar a la función getAllPublications, dentro del useEffect de Publications */}
             }
         })
-        /* console.log(response.data) */
+        console.log(response.data)
         return response
     } catch (error) {
         console.error(error.message)

@@ -1,13 +1,13 @@
 import { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { createUserPublication } from "../../Services/CreatePublicationService"
+import { createUserPublication } from "../../Services/CreatePublicationService";
+import ModalConfirm from "../../Components/ModalConfirm/ModalConfirm"; // Import the Modal component
 import "./CreatePublication.css";
 import { UserContext } from "../../Context/user";
 
-
 function CreatePublication() {
-    const { metodoId } = useParams()
-    const {user} = useContext(UserContext)
+    const { metodoId } = useParams();
+    const { user } = useContext(UserContext);
     const [publicationData, setPublicationData] = useState({
         imagen: "",
         titulo: "",
@@ -26,6 +26,9 @@ function CreatePublication() {
     });
 
     const [error, setError] = useState("");
+    const [isRemoveModalOpen, setIsRemoveModalOpen] = useState(false); // State for remove material modal
+    const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false); // State for submit publication modal
+    const [materialToRemove, setMaterialToRemove] = useState(null); // State to keep track of material being removed
     const navigate = useNavigate();
 
     const handleChangePublicationData = ({ target }) => {
@@ -55,49 +58,70 @@ function CreatePublication() {
 
     const handleRemoveMaterial = (index) => {
         if (index === 0) {
-            return;
+            return; // Prevent removing the first material
         }
+        // Open the modal to confirm removal
+        setIsRemoveModalOpen(true);
+        setMaterialToRemove(index); // Set the material index to remove
+    };
+
+    const confirmRemoveMaterial = () => {
         const newMaterials = [...publicationData.materiales];
-        newMaterials.splice(index, 1); // Remove the material at the given index
+        newMaterials.splice(materialToRemove, 1); // Remove the material
         setPublicationData((previousValue) => ({
             ...previousValue,
             materiales: newMaterials
         }));
+
+        // Close the modal
+        setIsRemoveModalOpen(false);
+        setMaterialToRemove(null);
+    };
+
+    const cancelRemoveMaterial = () => {
+        // Close the modal without removing the material
+        setIsRemoveModalOpen(false);
+        setMaterialToRemove(null);
     };
 
     const validateInput = () => {
-        // Simple validation: check if all required fields are filled
+        // Validate required fields
         if (!publicationData.titulo || !publicationData.contenido || !publicationData.metodo || !publicationData.categoria_artistica) {
-            setError("Please fill out all required fields.");
+            setError("Por favor rellena todos los campos requeridos.");
             return false;
         }
         return true;
     };
 
-    const handleCreatePublication = async (e) => {
-        e.preventDefault();
-
+    const handleSubmitModalOpen = (e) => {
+        e.preventDefault(); // Prevent form submission until the modal is confirmed
         if (!validateInput()) {
             return; // Stop if validation fails
         }
+        // Open the confirmation modal for submission
+        setIsSubmitModalOpen(true);
+    };
 
+    const confirmSubmitPublication = async () => {
         try {
-            await createUserPublication(user.publicoId, publicationData)
-
-
-            // Here you would typically send the data to your API
+            await createUserPublication(user.publicoId, publicationData);
             console.log("Publicación creada:", publicationData);
-            // After successful submission, navigate to another page, or reset form, etc.
-            navigate(`/publications/${metodoId}`); // example navigate
+            navigate(`/publications/${metodoId}`); // Navigate to another page after creation
+            setIsSubmitModalOpen(false); // Close modal after submission
         } catch (error) {
-            console.error("Error creating publication:", error.message);
-            setError("There was an error creating your publication.");
+            console.error("Error creando publicación:", error.message);
+            setError("Ha habido un error creando tu publicación.");
+            setIsSubmitModalOpen(false); // Close modal if there's an error
         }
+    };
+
+    const cancelSubmitPublication = () => {
+        setIsSubmitModalOpen(false); // Just close the modal if cancelled
     };
 
     return (
         <div>
-            <form onSubmit={handleCreatePublication}>
+            <form onSubmit={handleSubmitModalOpen}>
                 <section>
                     <label>
                         Imagen:
@@ -108,7 +132,7 @@ function CreatePublication() {
                         />
                     </label>
                     <label>
-                        Título:
+                        Título <span>*</span>:
                         <input
                             type="text"
                             name="titulo"
@@ -117,7 +141,7 @@ function CreatePublication() {
                         />
                     </label>
                     <label>
-                        Contenido:
+                        Contenido <span>*</span>:
                         <input
                             type="text"
                             name="contenido"
@@ -134,7 +158,7 @@ function CreatePublication() {
                         />
                     </label>
                     <label>
-                        Método:
+                        Método <span>*</span>:
                         <select
                             name="metodo"
                             onChange={handleChangePublicationData}
@@ -147,7 +171,7 @@ function CreatePublication() {
                         </select>
                     </label>
                     <label>
-                        Categoría artística:
+                        Categoría artística <span>*</span>:
                         <select
                             name="categoria_artistica"
                             onChange={handleChangePublicationData}
@@ -169,7 +193,7 @@ function CreatePublication() {
                     {publicationData.materiales.map((material, index) => (
                         <div key={index} className="material-form">
                             <label>
-                                Nombre del material:
+                                Nombre del material <span>*</span>:
                                 <input
                                     type="text"
                                     name="nombre"
@@ -179,7 +203,7 @@ function CreatePublication() {
                                 />
                             </label>
                             <label>
-                                Descripción:
+                                Descripción <span>*</span>:
                                 <input
                                     type="text"
                                     name="descripcion"
@@ -189,7 +213,7 @@ function CreatePublication() {
                                 />
                             </label>
                             <label>
-                                Marca:
+                                Marca <span>*</span>:
                                 <input
                                     type="text"
                                     name="marca"
@@ -207,14 +231,17 @@ function CreatePublication() {
                                     onChange={(e) => handleChangeMaterialData(index, e)}
                                 />
                             </label>
-                            <button type="button" onClick={() => handleRemoveMaterial(index)}>
-                                Remove Material
-                            </button>
+                            {/* Remove button for all but the first material */}
+                            {index !== 0 && (
+                                <button type="button" onClick={() => handleRemoveMaterial(index)}>
+                                    Borrar Material
+                                </button>
+                            )}
                         </div>
                     ))}
 
                     <button type="button" onClick={handleAddMaterial}>
-                        Add Material
+                        Añadir Material
                     </button>
                 </section>
                 {error && <p>{error}</p>}
@@ -222,6 +249,22 @@ function CreatePublication() {
                     <button type="submit">Crear</button>
                 </section>
             </form>
+
+            {/* Modal for confirmation on removing material */}
+            <ModalConfirm
+                isOpen={isRemoveModalOpen}
+                onConfirm={confirmRemoveMaterial}
+                onCancel={cancelRemoveMaterial}
+                message="¿Estás seguro/a de que quieres borrar este material?"
+            />
+
+            {/* Modal for confirmation on submitting the publication */}
+            <ModalConfirm
+                isOpen={isSubmitModalOpen}
+                onConfirm={confirmSubmitPublication}
+                onCancel={cancelSubmitPublication}
+                message="¿Estás seguro/a de que quieres crear tu publicación?"
+            />
         </div>
     );
 }
