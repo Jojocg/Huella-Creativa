@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { useContext, useEffect } from "react";
+import { useContext, useState } from 'react';
 import { UserContext } from "../../Context/user";
 import './Header.css';
 
 const Header = () => {
-    /* const navigate = useNavigate(); */
-    const { user } = useContext(UserContext);
+    const { user } = useContext(UserContext); // Contexto del usuario
+    const [activeMenu, setActiveMenu] = useState(null); // Control de los menús desplegables
 
     /* const logout = () => {
         localStorage.removeItem("token");
@@ -14,59 +13,97 @@ const Header = () => {
     }; */
 
     const loadMethods = () => {
+        // Si el usuario está logueado, carga las opciones del menú
         if (user) {
             return (
-                <>
-                    <ul className="navbar">
-                        <li className="traditional">Tradicional</li>
-                        <ul>
-                            <li><Link to="/publications/1">Ilustración</Link></li>
-                            <li><Link to="">Diseño Gráfico</Link></li>
-                            <li><Link to="">Escultura</Link></li>
-                            <li><Link to="">Modelado 3D</Link></li>
-                            <li><Link to="">Animación</Link></li>
-                        </ul>
-                        <li className="digital">Digital</li>
-                        <ul>
-                            <li><Link to="/publications/6">Ilustración</Link></li>
-                            <li><Link to="">Diseño Gráfico</Link></li>
-                            <li><Link to="">Escultura</Link></li>
-                            <li><Link to="">Modelado 3D</Link></li>
-                            <li><Link to="">Animación</Link></li>
-                        </ul>
+                <ul className="menu">
+                    {/* Categoría Tradicional */}
+                    <ul
+                        className={`menu-category ${activeMenu === "tradicional" ? "active" : ""}`}
+                        onMouseEnter={() => setActiveMenu("tradicional")}
+                        onMouseLeave={() => setActiveMenu(null)}
+                    >
+                        <li className="category-title">Tradicional</li>
+                        {activeMenu === "tradicional" && (
+                            <ul className="dropdown">
+                                <li><Link to="/publications/1">Ilustración</Link></li>
+                                <li><Link to="">Diseño Gráfico</Link></li>
+                                <li><Link to="">Escultura</Link></li>
+                                <li><Link to="">Modelado 3D</Link></li>
+                                <li><Link to="">Animación</Link></li>
+                            </ul>
+                        )}
                     </ul>
-                    <div>
-                        {localStorage.getItem("token") && (  //se puede comentar esta línea cuando queramos probar sin meter el usuario
-                        <>
-                            <h3>{user}</h3>
-                            {/* <button onClick={logout}>
-                                <h3>Logout</h3>
-                            </button> */}
-                        </>
-                    )}
-                    </div>
-                </>
-            )
+                    {/* Categoría Digital */}
+                    <ul
+                        className={`menu-category ${activeMenu === "digital" ? "active" : ""}`}
+                        onMouseEnter={() => setActiveMenu("digital")}
+                        onMouseLeave={() => setActiveMenu(null)}
+                    >
+                        <li className="category-title">Digital</li>
+                        {activeMenu === "digital" && (
+                            <ul className="dropdown">
+                                <li><Link to="/publications/6">Ilustración</Link></li>
+                                <li><Link to="">Diseño Gráfico</Link></li>
+                                <li><Link to="">Escultura</Link></li>
+                                <li><Link to="">Modelado 3D</Link></li>
+                                <li><Link to="">Animación</Link></li>
+                            </ul>
+                        )}
+                    </ul>
+                </ul>
+            );
         }
-    }
+    };
 
     const loadAuth = () => {
+        // Si no hay un usuario logueado, muestra los botones de autenticación
         if (!user) {
             return (
                 <>
-                    <Link to="auth/login"><button>Iniciar sesión/Regístrate</button></Link>
+                    <Link to="auth/login"><button className="btn-outline">Inicia sesión</button></Link>
+                    <Link to="auth/login/auth/signup"><button className="btn-primary">Regístrate</button></Link>
                 </>
-            )
+            );
+        } else {
+            return (
+                // Mostrar avatar y nombre del usuario cuando esté logueado
+                <div className="user-avatar">
+                    <img src="/AVATAR.png" alt="Avatar" className="avatar-icon" />
+                    <h3>{user}</h3>
+                </div>
+            );
         }
-    }
+    };
 
     return (
         <>
-            <section id="headerWrapper">
-                <Link to="/"><h3>Huella Creativa</h3></Link>
-                <div>{loadMethods()}</div>
-                <div>{loadAuth()}</div>
-            </section>
+            <header className="navbar">
+                {/* Logo */}
+                <div className="logo">
+                    <Link to="/">
+                        <img src="/Logo3.svg" alt="Huella Creativa" />
+                    </Link>
+                </div>
+
+                {/* Menú (solo si hay usuario activo) */}
+                <nav className="menu">
+                    {loadMethods()}
+                </nav>
+
+                {/* Controles del usuario */}
+                <div className="user-controls">
+                    {/* Modo oscuro */}
+                    <div className="modo">
+                        <img src="/modos-29.svg" alt="Modo oscuro" />
+                    </div>
+
+                    {/* Botones o avatar del usuario */}
+                    <div className="login-register">
+                        {loadAuth()}
+                    </div>
+                </div>
+            </header>
         </>
     );
 };

@@ -1,0 +1,124 @@
+/* Footer Styles */
+.footer {
+    background-color: #C315BF;
+    color: #FFFFFA;
+    padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    
+  }
+  
+  .newsletter {
+    margin-left: 3%;
+  }
+  
+  .footer a {
+    color: #BAF241;
+    text-decoration: underline;
+    font-weight: 500;
+    
+  }
+  
+  .footer-title {
+    font-size: 2.8em;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: #BAF241;
+  }
+  
+  .footer-subtitle {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #FFFFFA;
+  }
+  
+  .terms {
+    margin: 15px 0;
+  }
+  
+  .terms input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #BAF241;
+  }
+  
+  .terms label a {
+    color: #BAF241;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .input-wrapper input {
+    flex: 1;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #5A23AD;
+    background-color: rgba(255, 255, 250, 0.8);
+  }
+  
+  .input-wrapper button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1em;
+    color: #FFFFFA;
+    background-color: #4037FF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .input-wrapper button:hover {
+    background-color: #0F1020;
+  }
+  
+  .logo-section {
+    margin-top: 2%;
+  }
+  
+  .logo-footer {
+    width: 55%;
+    margin-top: 2%;
+  }
+  
+  .socials {
+    text-align: center;
+    margin-top: 15%;
+    margin-right: 2%;
+  }
+  
+  
+  .social-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.1);
+  }
+  
+  
+  
+  
+  
+  

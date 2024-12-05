@@ -1,0 +1,317 @@
+/* General Styles */
+  
+
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-family: 'Fractul', sans-serif;
+    font-weight: 700;
+    color: #0F1020; /* Color principal del texto */
+    margin-bottom: 20px;
+    line-height: 105%;
+}
+
+h1 span.highlight {
+    color: #BAF241; /* Color verde para la palabra resaltada */
+}
+
+.hero p {
+    font-size: 1.3rem;
+    font-family: 'Outfit', sans-serif;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: #363636; /* Color gris para el texto */
+    margin-bottom: 30px;
+}
+
+
+
+/* Botones */
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.hero-buttons button {
+    margin: 0 0.5%;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .hero-buttons .btn-outline {
+    background-color: transparent;
+    border: 1px solid #4037FF;
+    color: #4037FF;
+    transition: all 0.3s ease;
+  }
+  
+  .hero-buttons .btn-outline:hover {
+    background-color: #4037FF;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+ 
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    overflow: visible; /* Oculta cualquier desbordamiento */
+  }
+  
+  .hero-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: auto;
+    z-index: -1; /* Coloca las imágenes detrás del texto */
+    display: flex;
+    justify-content: space-between; /* Coloca las imágenes en los extremos */
+    pointer-events: none; /* Permite interactuar con los elementos superpuestos */
+}
+
+.fondo-web-izq,
+.fondo-web-dch {
+    width: 50%;
+    height: auto;   
+}
+  
+  .fondo-web-izq {
+    left: 0;
+    width: 50%; /* Ajusta según el tamaño deseado */
+    height: auto;
+
+  }
+  
+  
+  .fondo-web-dch {
+    right: 0;
+    width: 50%; /* Ajusta según el tamaño deseado */
+    height: auto;
+    rotate: 180deg;
+    transform: scaleX(-1);
+  }
+  
+  
+  
+  
+  
+  /* Galería */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: auto;
+    width: 60%;
+    justify-self: center;
+  }
+  
+  .gallery-item {
+    background: #FFF;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos se coloquen verticalmente */
+    justify-content: space-between;
+  }
+  
+  .image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+    opacity: 0.9; 
+  }
+  
+  .image-container:hover img {
+    opacity: 1; 
+  }
+  
+  .gallery-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #4037FF; /* Azul del nombre */
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    color: #5A23AD; /* Morado suave */
+    margin: 0 ;
+  }
+  .stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 10px;
+  }
+  
+  .stats .likes {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaciado entre el corazón y el número */
+    color: #747474; /* Gris para el texto */
+  }
+  
+  .stats .likes .icon {
+    width: 20px;
+    height: auto;
+  }
+  
+  .btn-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-left: auto; /* Alinea el botón de flecha hacia la derecha */
+  }
+  
+  .btn-arrow img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+  }
+  
+  .btn-arrow:hover img {
+    opacity: 0;
+  }
+  
+  .btn-arrow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-image: url('/flechas-21.svg'); /* Nueva imagen */
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .btn-arrow:hover::after {
+    opacity: 1;
+  }
+  
+  
+  
+  .gallery-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Aumenta el efecto de sombra */
+  }
+  
+  
+  
+  /* Separator */
+  .separator {
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+  }
+  
+  .separator img {
+    width: 5%; /* Ajusta el tamaño según necesites */
+  }
+  
+  /* Call to Action */
+  .cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 5%;
+  }
+  
+  .cta h2 {
+    font-size: 3rem;
+    margin-bottom: 2%;
+    color: #0F1020;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .cta-buttons button {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .cta-buttons .btn-outline {
+    background-color: transparent;
+    border: 2px solid #4037FF;
+    color: #4037FF;
+  }
+  
+  .cta-buttons .btn-outline:hover {
+    background-color: #4037FF;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+  }
+  
+  .cta-buttons .btn-primary {
+    background-color: #4037FF;
+    color: #FFFFFF;
+  }
+  
+  .cta-buttons .btn-primary:hover {
+    background-color: #0F1020;
+    transform: translateY(-2px);
+  }
+  
+ 
