@@ -64,7 +64,7 @@ const Home = () => {
                                     <img src="/corazon.svg" alt="Corazón" className="icon" />
                                     <span>{item.likes}</span>
                                 </div>
-                                <a href="https://elpais.com/" target="_blank" rel="noopener noreferrer" className="btn-arrow">
+                                <a href="/NotFound" target="_blank" rel="noopener noreferrer" className="btn-arrow">
                                     <img src="/flechas-20.svg" alt="Flecha verde" />
                                 </a>
                             </div>

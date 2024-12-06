@@ -1,5 +1,5 @@
-/* General Styles */
 
+/* Hero Section textos */
 .hero h1 {
     font-size: 4.5rem;
     font-family: 'Fractul', sans-serif;
@@ -76,26 +76,27 @@ button {
     height: 100%;
     z-index: -1; 
     display: flex;
-    justify-content: space-between; /* Coloca las imágenes en los extremos */
-    align-items: center; /* Asegura que las imágenes se centren verticalmente */
-    pointer-events: none; /* Permite interactuar con los elementos superpuestos */
+    justify-content: space-between; 
+    align-items: center; 
+    pointer-events: none; 
+    animation: float 3s infinite ease-in-out;
 }
 
 .fondo-web-izq,
 .fondo-web-dch {
     width: 22%; 
     height: auto; 
-    object-fit: cover; /* Asegura que las imágenes no se deformen */
+    object-fit: cover; 
 }
 
 .fondo-web-izq {
     position: relative;
-    left: 0; /* Mantiene la imagen a la izquierda */
+    left: 0; 
 }
 
 .fondo-web-dch {
     position: relative;
-    right: 0; /* Mantiene la imagen a la derecha */
+    right: 0; 
     rotate: 180deg;
     transform: scaleX(-1); /* Invierte la imagen horizontalmente */
 }
@@ -241,7 +242,7 @@ button {
   
   
   .gallery-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Aumenta el efecto de sombra */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
   
   
@@ -269,8 +270,6 @@ button {
   }
   
 
-
-  /* CTA */
   .cta h2 {
     font-size: 3rem;
     margin-bottom: 2%;
@@ -278,7 +277,7 @@ button {
   }
 
   h2 span.highlight {
-    color: #4037FF; /* Color verde para la palabra resaltada */
+    color: #4037FF; 
 }
   
   .cta-buttons {
@@ -316,7 +315,15 @@ button {
     transform: translateY(-2px);
   }
   
- 
+ /* Animación flotante */
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
 
 
 

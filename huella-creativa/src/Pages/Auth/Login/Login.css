@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     color: #0F1020;
-    background-color: #FFFFFA;
+
 }
 
 /* Sección de Login */
@@ -27,7 +27,7 @@ body {
     max-width: 100%;
     height: auto;
     z-index: -1;
-    opacity: 0.8;
+    opacity: 0.3;
 }
 
 /* Mensaje de bienvenida */
@@ -41,7 +41,7 @@ body {
 }
 
 .SayHi h1 .highlight {
-    color: #BAF241;
+    color: #4037FF;
 }
 
 /* Formulario de inicio de sesión */
@@ -80,15 +80,15 @@ body {
 /* Botón de envío */
 .button_login {
     width: 100%;
-    max-width: 120px;
-    border: none;
-    border-radius: 25px;
     padding: 12px 25px;
-    font-size: 1rem;
-    color: #FFFFFF;
+    border-radius: 25px;
+    border: none;
     background-color: #4037FF;
-    font-family: "Outfit", sans-serif;
+    color: #FFFFFF;
+    font-size: 1rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
 
@@ -140,7 +140,7 @@ gap: 10px;
 padding: 12px 25px;
 border-radius: 25px;
 border: 2px solid #4037FF;
-background-color: transparent;
+background-color: white;
 font-size: 1rem;
 font-family: "Outfit", sans-serif;
 color: #4037FF;
@@ -182,35 +182,29 @@ transform: scale(1.2);
 }
 
 /* Texto de registro */
-.signup-prompt {
-margin-top: 20px;
-font-size: 1rem;
-font-family: "Outfit", sans-serif;
-text-align: center;
-}
 
-.signup-prompt .signup-link {
+
+.signup-prompt  {
+text-align: center;
+align-items: center;
 color: #4037FF;
+font-size: 1.7em;
 text-decoration: none;
 font-weight: bold;
+margin-bottom: 4%;
+margin-top: 5%;
 }
 
-.signup-prompt .signup-link:hover {
-text-decoration: underline;
-}
 
 /* Botón Regístrate */
 .button_register {
 width: 100%;
-max-width: 200px;
-margin-top: 20px;
 padding: 12px 25px;
 border-radius: 25px;
 border: none;
 background-color: #4037FF;
 color: #FFFFFF;
 font-size: 1rem;
-font-family: "Outfit", sans-serif;
 cursor: pointer;
 transition: all 0.3s ease;
 text-align: center;

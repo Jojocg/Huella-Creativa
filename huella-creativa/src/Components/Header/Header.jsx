@@ -80,11 +80,13 @@ const Header = () => {
         <>
             <header className="navbar">
                 {/* Logo */}
+                {/* Logo */}
                 <div className="logo">
-                    <Link to="/">
+                    <Link to={user ? "/homeLogin" : "/"}>
                         <img src="/Logo3.svg" alt="Huella Creativa" />
                     </Link>
                 </div>
+                
 
                 {/* Menú (solo si hay usuario activo) */}
                 <nav className="menu">

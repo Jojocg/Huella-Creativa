@@ -73,7 +73,7 @@ const Login = () => {
                     <br />
 
                     <button type="submit" className="button_login">
-                        <Link to="/homeLogin">
+                        <Link to="/HomeLogin">
                         LogIn
                         </Link>
                     </button>
@@ -101,16 +101,16 @@ const Login = () => {
                     </button>
                 </div>
 
-
+<div className="signup-prompt">
                 <p>
                     ¿No tienes cuenta?
                 </p>
-
                     <button type="submit" className="button_register">
                         <Link to="/homeLogin">
                         Regístrate
                         </Link>
                     </button>
+                    </div>
 
                     
           

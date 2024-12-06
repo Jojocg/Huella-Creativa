@@ -79,6 +79,7 @@ button {
   list-style: none;
   margin: 0;
   padding: 0;
+  color: #4037FF;
   
 }
 
@@ -119,7 +120,7 @@ button {
 
 .menu-category .dropdown li {
   padding: 8px 15px;
-  color: #0F1020;
+  color: #4037FF;
 }
 
 .menu-category .dropdown li:hover {
