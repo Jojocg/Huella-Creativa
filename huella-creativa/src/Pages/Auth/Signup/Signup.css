@@ -1,0 +1,185 @@
+
+.signup {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    padding: 20px;
+    margin: 4%;
+}
+
+/* Mensaje de bienvenida */
+.SayHi h1 {
+    font-size: 3.5rem;
+    font-family: "Fractul", sans-serif;
+    font-weight: 700;
+    color: #0F1020;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.SayHi h1 .highlight {
+    color: #BAF241;
+}
+
+.SayHi p {
+    font-size: 1rem;
+    text-align: center;
+    color: #5A23AD;
+    margin-bottom: 30px;
+}
+
+/* Formulario de registro */
+.signup-form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 2;
+}
+
+.input-wrapper {
+    width: 100%;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid #4037FF;
+    outline: none;
+    font-size: 1rem;
+    font-family: "Outfit", sans-serif;
+    color: #5A23AD;
+    background-color: rgba(255, 255, 250, 0.8);
+    transition: all 0.3s ease;
+}
+
+.input-wrapper input:focus {
+    border-color: #BAF241;
+    background-color: #FFFFFF;
+}
+
+/* Botón de envío */
+.button_submit {
+    width: 100%;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    background-color: #4037FF;
+    color: #FFFFFF;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.button_submit:hover {
+    background-color: #0F1020;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Círculo verde como separador */
+.greenCircle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #BAF241;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    position: relative;
+    z-index: 1;
+}
+
+.greenCircle .alternativa {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.5rem;
+    color: #0F1020;
+    font-weight: bold;
+}
+
+/* Botón Gmail */
+.google-login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button_google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: 2px solid #4037FF;
+    background-color: white;
+    font-size: 1rem;
+    font-family: "Outfit", sans-serif;
+    color: #4037FF;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button_google:hover {
+    background-color: #4037FF;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Paginador decorativo */
+.pagination-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.pagination-dots .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #D8D8D8;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.pagination-dots .dot.active {
+    background-color: #BAF241;
+    transform: scale(1.2);
+}
+
+/* Texto de inicio de sesión */
+.login-prompt {
+    text-align: center;
+    color: #4037FF;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.button_login {
+    background: none;
+    border: none;
+    color: #4037FF;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.button_login a {
+    color: inherit;
+    text-decoration: none;
+}

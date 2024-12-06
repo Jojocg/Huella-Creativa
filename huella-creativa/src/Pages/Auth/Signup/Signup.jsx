@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { signup } from "../../../Services/AuthService";
 import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 import { UserContext } from "../../../Context/user";
 
-function Signup () {
+function Signup() {
     const [formData, setFormData] = useState({
         nombre: "",
         email: "",
@@ -21,6 +22,7 @@ function Signup () {
         const { name, value } = target;
         setFormData((previousValue) => ({ ...previousValue, [name]: value }));
     };
+
     const validatePassword = () => {
         return formData.password === confirmPassword ? true : false;
     };
@@ -31,11 +33,13 @@ function Signup () {
             if (validatePassword()) {
                 const response = await signup(formData);
                 if (response) {
-                    console.log(formData); //revisar este console.log
+                    console.log(formData); // revisar este console.log
                     response;
                     localStorage.setItem("token", response.data.token);
-                    setUser({ nombre: formData.nombre, publicoId: response.data.publicoId });
-                    navigate("/");
+
+                    setUser(formData.nombre);
+                    navigate("/user-profile");
+
                 }
             } else {
                 setError("Las contraseñas no coinciden");
@@ -46,47 +50,121 @@ function Signup () {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSignup}>
-                <section>
-                    <label>
-                        Nombre y Apellidos:
+        <section className="signup">
+             {/* Contenedor de imágenes de fondo */}
+             <div className="hero-images">
+                    <img
+                        className="fondo-web-izq"
+                        src="/fondo_izq.png"
+                        alt="Decoración izquierda"
+                    />
+                    <img
+                        className="fondo-web-dch"
+                        src="/fondo_dch.png"
+                        alt="Decoración derecha"
+                    />
+                </div>
+            {/* Mensaje de bienvenida */}
+            <div className="SayHi">
+                {/* Contenido del Hero */}
+                <h1>
+                    ¡Tu viaje creativo <br /> <span className="highlight">comienza aquí!</span>
+                </h1>
+                <p>
+                    Conecta con artistas, domina nuevas herramientas y transforma tu
+                    creatividad en talento. Este es el lugar donde aprender y fomentar tu
+                    creatividad desde cualquier rama.
+                </p>
+            </div>
+
+            {/* Formulario de registro */}
+            <div className="signup-form">
+                <form onSubmit={handleSignup}>
+                    <div className="input-wrapper">
                         <input
                             type="text"
                             name="nombre"
+                            placeholder="NOMBRE Y APELLIDOS*"
+                            value={formData.nombre}
                             onChange={handleChangeFormData}
                             required
                         />
-                    </label>
-                    <label>
-                        Email:
-                        <input type="email" name="email" onChange={handleChangeFormData} required/>
-                    </label>
-                    <label>
-                        Contraseña:
+                    </div>
+                    <div className="input-wrapper">
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="EMAIL*"
+                            value={formData.email}
+                            onChange={handleChangeFormData}
+                            required
+                        />
+                    </div>
+                    <div className="input-wrapper">
                         <input
                             type="password"
                             name="password"
+                            placeholder="CONTRASEÑA*"
+                            value={formData.password}
                             onChange={handleChangeFormData}
+                            required
                         />
-                    </label>
-                    <label>
-                        Repite la contraseña:
+                    </div>
+                    <div className="input-wrapper">
                         <input
                             type="password"
                             name="confirmPassword"
+                            placeholder="CONFIRMAR CONTRASEÑA*"
+                            value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             required
                         />
-                    </label>
-                </section>
-                {error && <p>{error}</p>}
-                <section>
-                    <button type="submit">Crear</button>
-                </section>
-            </form>
-        </div>
+                    </div>
+                    {error && <p className="error-message">{error}</p>}
+                    <button type="submit" className="button_submit">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+
+            {/* Círculo verde como separador */}
+            <div className="greenCircle">
+                <span className="alternativa">o</span>
+            </div>
+
+            {/* Botón de login con Gmail */}
+            <div className="google-login">
+                <button className="button_google">
+                    INICIA CON CORREO GMAIL
+                    <img
+                        src="/Google__G__logo.svg.png"
+                        alt="Google Icon"
+                        className="google-icon"
+                    />
+                </button>
+            </div>
+
+            {/* Paginador decorativo */}
+            <div className="pagination-dots">
+                <span className="dot active"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+            </div>
+
+            {/* Texto de inicio de sesión */}
+            <div className="login-prompt">
+                <p>
+                    ¿No tienes cuenta?
+                </p>
+                    <button type="button" className="button_login">
+                        <Link to="/auth/login">
+                        Inicia sesión
+                        </Link>
+                    </button>
+                    </div>
+           
+        </section>
     );
-};
+}
 
 export default Signup;

@@ -1,16 +1,23 @@
 import api from "./config";
 
+
+
 export const getAllPublications = async (id) => {
     try {
+        console.log("Llamada a getAllPublications con metodoId:", id); // Log del ID recibido
         const response = await api.get("publicaciones/", {
             params: {
-                metodoId: id //{/* el id se sustituye al llamar a la función getAllPublications, dentro del useEffect de Publications */}
+                metodoId: id
             }
+
         })
-        console.log(response.data)
+        console.log(response.data) //Revisar esta linea
         return response
+
     } catch (error) {
-        console.error(error.message)
+        console.error("Error en getAllPublications:", error.message);
     }
-    
-}
+};
+
+
+

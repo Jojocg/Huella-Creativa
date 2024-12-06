@@ -1,6 +1,5 @@
 import React from 'react';
-import "./Modal.css"
-
+import './Modal.css';
 
 const Modal = ({ publication, closeModal }) => {
     if (!publication) return null;
@@ -12,8 +11,15 @@ const Modal = ({ publication, closeModal }) => {
 
     const formattedDate = `${year}-${month}-${day}`; // Format as "YYYY-MM-DD"
 
+    const creationDate = new Date(publication.fecha_publicacion);
+    const year = creationDate.getFullYear();
+    const month = String(creationDate.getMonth() + 1).padStart(2, '0');
+    const day = String(creationDate.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+
     return (
         <div className="modal-overlay" onClick={closeModal}>
+
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <h3>{publication.titulo}</h3>
                 <p>{publication.contenido}</p>
@@ -21,6 +27,7 @@ const Modal = ({ publication, closeModal }) => {
                 <p>{formattedDate}</p>
                 {publication.imagen && <img src={publication.imagen} alt={publication.titulo} />}
                 <button onClick={closeModal}>Close</button>
+
             </div>
         </div>
     );

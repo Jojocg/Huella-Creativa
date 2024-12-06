@@ -1,0 +1,203 @@
+
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    overflow: visible;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-family: 'Fractul', sans-serif;
+    font-weight: 700;
+    color: #0F1020;
+    margin-bottom: 20px;
+    line-height: 105%;
+}
+
+.hero h1 .highlight {
+    color: #BAF241;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: #363636;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 30px;
+}
+
+.hero-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    animation: float 3s infinite ease-in-out;
+}
+
+.fondo-web-izq,
+.fondo-web-dch {
+    width: 22%;
+    height: auto;
+    object-fit: cover;
+}
+
+.fondo-web-dch {
+    transform: scaleX(-1);
+}
+
+/* Sección de categorías */
+.categories {
+    display: flex; 
+    flex-wrap: wrap; /* Permite que las tarjetas se muevan a la siguiente línea si no caben */
+    justify-content: space-between; 
+    gap: 20px; 
+    width: 70%; 
+    margin: 0 auto; 
+    padding: 50px 0; 
+}
+
+.category-box {
+    width: calc(20% - 20px); /* Asegura que haya 5 tarjetas uniformes con espacio */
+    height: 15rem; 
+    background-color: #E0E0E0;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Asegura que los elementos no se salgan del contenedor */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2; 
+}
+
+.category-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.category-box:hover img {
+    opacity: 0.5; 
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.category-box:hover .content-container {
+    transform: translateY(-20px);
+}
+
+
+.category-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0F1020;
+    margin-bottom: 10px;
+    transition: margin 0.3s ease, color 0.3s ease;
+}
+
+
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.category-box:hover .options {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.btn-traditional,
+.btn-digital {
+    width: 120px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+/* Button Colors */
+.btn-traditional {
+    background-color: #4037FF;
+    color: white;
+}
+
+.btn-traditional:hover {
+    background-color: #0F1020;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-digital {
+    background-color: #4037FF;
+    color: white;
+}
+
+.btn-digital:hover {
+    background-color: #BAF241;
+    color: #0F1020;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Separator */
+.separator {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.separator img {
+    width: 5%;
+}
+
+
+ /* Animación flotante */
+ @keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+  }

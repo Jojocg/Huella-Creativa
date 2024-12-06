@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import './App.css';
 import router from './Router/index';
 
+
 function App() {
   const defaultUser = useContext(UserContext);
   const [user, setUser] = useState(defaultUser);

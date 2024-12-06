@@ -1,0 +1,98 @@
+/* Contenedor principal */
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Número 404 */
+.not-found-404 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem;
+    font-weight: bold;
+    color: #BAF241; /* Verde lima */
+    z-index: 2; 
+    pointer-events: none; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra negra suave */
+}
+
+
+/* Imagen de fondo */
+.not-found-image {
+    width: 50%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    animation: float 3s infinite ease-in-out;
+
+}
+
+/* Título principal */
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #0F1020;
+    margin-bottom: 10px;
+    z-index: 2; /* Título por encima de la imagen */
+}
+
+.title .highlight {
+    color: #BAF241;
+}
+
+/* Descripción */
+.description {
+    font-size: 1.2rem;
+    color: #303030;
+    margin-bottom: 30px;
+    z-index: 2;
+}
+
+/* Botón de regreso */
+.btn-primary {
+    background-color: #4037FF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Decoración de puntos */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0.5;
+}
+
+.dots img {
+    width: 60px;
+}
+
+/* Animación flotante */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
