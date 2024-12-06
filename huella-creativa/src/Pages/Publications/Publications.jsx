@@ -6,16 +6,19 @@ import "./Publications.css";
 
 const Publications = () => {
     const { metodoId } = useParams();
+    console.log("metodoId recibido:", metodoId);
     const location = useLocation();
+    const { category = "General", method = "General" } = location.state || {}; // Aquí recibimos el estado pasado desde HomeLogin
+    console.log("State recibido:", { category, method }); // Agregar un console.log para depuración
     const [publications, setPublications] = useState([]);
     const [selectedPublication, setSelectedPublication] = useState(null); // To track the selected publication
     const [showModal, setShowModal] = useState(false); // To control the visibility of the modal
     const [sortOption, setSortOption] = useState("newest"); // Sorting option
 
-    // Recuperar datos de categoría y método del estado pasado desde HomeLogin
-    const { category = "General", method = "General" } = location.state || {};
+  
 
     useEffect(() => {
+        console.log("metodoId recibido:", metodoId);
         const getPublications = async () => {
             const response = await getAllPublications(metodoId);
             setPublications(response.data);
@@ -118,7 +121,7 @@ const Publications = () => {
                     <div className="gallery-info">
                         <div className="profile">
                             <img src="AVATAR.png" alt="Avatar" className="avatar" />
-                            <span className="name">{publication.autor.nombre}</span>
+                            <span className="name">{publication.Publico?.Privado?.nombre || "Desconocido"}</span>
                         </div>
                         <p className="description">{publication.titulo}</p>
                         <div className="stats">

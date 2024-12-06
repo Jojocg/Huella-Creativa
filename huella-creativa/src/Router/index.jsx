@@ -44,9 +44,9 @@ const router = createBrowserRouter([
                 element: <HomeLogin />,
             },
             {
-                path: "/publications/:metodoId", 
+                path: "/publications/:metodoId",
                 element: <Publications />,
-                loader: checkAuthLoader, //se puede comentar esta línea cuando queramos probar sin meter el usuario
+                            loader: checkAuthLoader, //se puede comentar esta línea cuando queramos probar sin meter el usuario
             },
             {
                 path: "/publications/:metodoId/create",
