@@ -15,7 +15,7 @@ const Publications = () => {
     const [showModal, setShowModal] = useState(false); // To control the visibility of the modal
     const [sortOption, setSortOption] = useState("newest"); // Sorting option
 
-  
+
 
     useEffect(() => {
         console.log("metodoId recibido:", metodoId);
@@ -62,6 +62,9 @@ const Publications = () => {
     };
 
 
+
+
+
     const getDescription = (category, method) => {
         const descriptions = {
             ilustración: {
@@ -85,30 +88,38 @@ const Publications = () => {
                 digital: "Descubre las herramientas y flujos de trabajo para la animación digital moderna."
             }
         };
-    
+
         // Validar y retornar la descripción adecuada
         if (descriptions[category] && descriptions[category][method]) {
             return descriptions[category][method];
         }
-    
+
         // Valor por defecto si no hay coincidencia
         return "Explora las mejores técnicas y herramientas para mejorar tus habilidades creativas.";
     };
-    
+
 
     // Mantener el método displayPublications sin modificaciones
     const displayPublications = () => {
+        // Comprueba si hay publicaciones disponibles
+        if (!publications || publications.length === 0) {
+            return <p>No hay publicaciones disponibles.</p>;
+        }
+
         return publications.map((publication) => {
-            // Step 1: Parse the date (without using toISOString) and format it manually
-            const creationDate = new Date(publication.fecha_publicacion);
+            console.log("Publicación procesada:", JSON.stringify(publication, null, 2));
 
-            const year = creationDate.getFullYear(); // Get the year
-            const month = String(creationDate.getMonth() + 1).padStart(2, "0"); // Get the month, add 1 (months start from 0)
-            const day = String(creationDate.getDate()).padStart(2, "0"); // Get the day, and ensure it's 2 digits
 
-            const formattedDate = `${year}-${month}-${day}`; // Format as "YYYY-MM-DD"
+            // Verifica que la fecha de publicación exista
+            const creationDate = publication.fecha_publicacion
+                ? new Date(publication.fecha_publicacion)
+                : null;
 
-            // Step 2: Render the publication card with styles
+            // Formatea la fecha si existe
+            const formattedDate = creationDate
+                ? `${creationDate.getFullYear()}-${String(creationDate.getMonth() + 1).padStart(2, "0")}-${String(creationDate.getDate()).padStart(2, "0")}`
+                : "Fecha desconocida";
+
             return (
                 <div
                     key={publication.id}
@@ -116,21 +127,35 @@ const Publications = () => {
                     onClick={() => openModal(publication)}
                 >
                     <div className="image-container">
-                        <img src={publication.imagen} alt={publication.titulo} />
+                        <img
+                            src={publication.imagen || "/default-image.png"} // Imagen por defecto si no hay una imagen
+                            alt={publication.titulo || "Sin título"}
+                        />
                     </div>
                     <div className="gallery-info">
                         <div className="profile">
-                            <img src="AVATAR.png" alt="Avatar" className="avatar" />
-                            <span className="name">{publication.Publico?.Privado?.nombre || "Desconocido"}</span>
+                            <img
+                                src="AVATAR.png"
+                                alt="Avatar"
+                                className="avatar"
+                            />
+                            <span className="name">
+                                <span className="name">
+                                    {publication?.publico?.nombre_usuario || publication?.publico?.privado?.nombre || "Nombre no disponible"}
+                                </span>
+                            </span>
                         </div>
-                        <p className="description">{publication.titulo}</p>
+                        <p className="description">{publication.titulo || "Sin título"}</p>
+                        <p className="date">Fecha: {formattedDate}</p>
                         <div className="stats">
-                            <div className="likes">
-                                <img src="/corazon.svg" alt="Corazón" className="icon" />
-                                <span>{publication.valoraciones}</span>
-                            </div>
-                            <Link to={`/publications/${publication.id}`} className="btn-arrow">
-                                <img src="/flechas-20.svg" alt="Flecha verde" />
+                            <Link
+                                to={`/publications/${publication.id}`}
+                                className="btn-arrow"
+                            >
+                                <img
+                                    src="/flechas-20.svg"
+                                    alt="Flecha verde"
+                                />
                             </Link>
                         </div>
                     </div>
@@ -139,18 +164,19 @@ const Publications = () => {
         });
     };
 
+
     return (
         <div className="publications-page">
             {/* Header Section */}
             <header className="publications-header">
-    <div>
-        {/* Render dinámico de encabezado */}
-        <h1 className="section-subtitle">{category}</h1>
-        <h2>{method}</h2>
-        <p className="section-description">
-            {getDescription(category, method)}
-        </p>
-    </div>
+                <div>
+                    {/* Render dinámico de encabezado */}
+                    <h1 className="section-subtitle">{category}</h1>
+                    <h2>{method}</h2>
+                    <p className="section-description">
+                        {getDescription(category, method)}
+                    </p>
+                </div>
                 <Link to={`/publications/${metodoId}/create`}>
                     <button>Crear publicación</button>
                 </Link>
