@@ -107,15 +107,24 @@ function CreatePublication() {
 
     const confirmSubmitPublication = async () => {
         try {
-            console.log(user.publicoId)
-            await createUserPublication(user.publicoId, publicationData);
+            console.log("Datos enviados al servicio:",publicationData, user.publicoId);
+            await createUserPublication(user.publicoId, publicationData, metodoId);
             console.log("Publicación creada:", publicationData);
-            navigate(`/publications/${metodoId}`); // Navigate to another page after creation
-            setIsSubmitModalOpen(false); // Close modal after submission
+    
+            // Redirige a la categoría y método seleccionados por el usuario
+            navigate(`/publications/${metodoId}`,
+                {
+                state: {
+                    category: publicationData.categoria_artistica,
+                    method: publicationData.metodo,
+                },
+            }
+        );
+            setIsSubmitModalOpen(false); // Cierra el modal después del envío
         } catch (error) {
             console.error("Error creando publicación:", error.message);
             setError("Ha habido un error creando tu publicación.");
-            setIsSubmitModalOpen(false); // Close modal if there's an error
+            setIsSubmitModalOpen(false); // Cierra el modal si hay un error
         }
     };
 

@@ -62,12 +62,7 @@ const router = createBrowserRouter([
                 element: <CreatePublication />,
                 loader: checkAuthLoader, //se puede comentar esta línea cuando queramos probar sin meter el usuario
             },
-            {
-                path: "/publications/:metodoId/create",
-                element: <CreatePublication />,
-                loader: checkAuthLoader, //se puede comentar esta línea cuando queramos probar sin meter el usuario
-            },
-            
+        
         ],
     },
 ]);
