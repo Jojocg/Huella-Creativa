@@ -83,7 +83,7 @@ body {
 }
 
 /* Botón de envío */
-.button_login {
+.login-form form .button_login {
     width: 100%; /* Igual al ancho del formulario */
     max-width: 400px; /* Limita el ancho máximo */
     padding: 12px 25px;
@@ -95,6 +95,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
+    text-decoration: none;
 }
 
 
