@@ -27,11 +27,11 @@ const Header = () => {
                         <span className="category-title">Tradicional</span>
                         {activeMenu === "tradicional" && (
                             <ul className="dropdown">
-                                <li><Link to="/publications/1">Ilustración</Link></li>
-                                <li><Link to="">Diseño Gráfico</Link></li>
-                                <li><Link to="">Escultura</Link></li>
-                                <li><Link to="">Modelado 3D</Link></li>
-                                <li><Link to="">Animación</Link></li>
+                                <li><Link to="/publications/1" state={{ category: "ilustración", method: "tradicional" }}>Ilustración</Link></li>
+                                <li><Link to="/publications/3" state={{ category: "diseño gráfico", method: "tradicional" }}>Diseño Gráfico</Link></li>
+                                <li><Link to="/publications/2" state={{ category: "escultura", method: "tradicional" }}>Escultura</Link></li>
+                                <li><Link to="/publications/5" state={{ category: "modelado 3D", method: "tradicional" }}>Modelado 3D</Link></li>
+                                <li><Link to="/publications/4" state={{ category: "animación", method: "tradicional" }}>Animación</Link></li>
                             </ul>
                         )}
                     </li>
@@ -44,11 +44,11 @@ const Header = () => {
                         <span className="category-title">Digital</span>
                         {activeMenu === "digital" && (
                             <ul className="dropdown">
-                                <li><Link to="/publications/6">Ilustración</Link></li>
-                                <li><Link to="">Diseño Gráfico</Link></li>
-                                <li><Link to="">Escultura</Link></li>
-                                <li><Link to="">Modelado 3D</Link></li>
-                                <li><Link to="">Animación</Link></li>
+                                <li><Link to="/publications/6" state={{ category: "ilustración", method: "digital" }}>Ilustración</Link></li>
+                                <li><Link to="/publications/8" state={{ category: "diseño gráfico", method: "digital" }}>Diseño Gráfico</Link></li>
+                                <li><Link to="/publications/7" state={{ category: "escultura", method: "digital" }}>Escultura</Link></li>
+                                <li><Link to="/publications/10" state={{ category: "modelado 3D", method: "digital" }}>Modelado 3D</Link></li>
+                                <li><Link to="/publications/9" state={{ category: "animación", method: "digital" }}>Animación</Link></li>
                             </ul>
                         )}
                     </li>

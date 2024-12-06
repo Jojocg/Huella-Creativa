@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { createUserPublication } from "../../Services/CreatePublicationService";
 
 import ModalConfirm from "../../Components/ModalConfirm/ModalConfirm"; // Import the Modal component
-
 import "./CreatePublication.css";
 import { UserContext } from "../../Context/user";
 
