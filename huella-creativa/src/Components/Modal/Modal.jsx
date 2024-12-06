@@ -11,12 +11,6 @@ const Modal = ({ publication, closeModal }) => {
 
     const formattedDate = `${year}-${month}-${day}`; // Format as "YYYY-MM-DD"
 
-    const creationDate = new Date(publication.fecha_publicacion);
-    const year = creationDate.getFullYear();
-    const month = String(creationDate.getMonth() + 1).padStart(2, '0');
-    const day = String(creationDate.getDate()).padStart(2, '0');
-    const formattedDate = `${year}-${month}-${day}`;
-
     return (
         <div className="modal-overlay" onClick={closeModal}>
 
