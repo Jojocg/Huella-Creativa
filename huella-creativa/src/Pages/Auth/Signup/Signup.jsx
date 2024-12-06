@@ -36,8 +36,10 @@ function Signup() {
                     console.log(formData); // revisar este console.log
                     response;
                     localStorage.setItem("token", response.data.token);
+
                     setUser(formData.nombre);
                     navigate("/user-profile");
+
                 }
             } else {
                 setError("Las contraseñas no coinciden");

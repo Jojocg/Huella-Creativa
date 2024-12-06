@@ -16,6 +16,7 @@ const Header = () => {
         // Si el usuario está logueado, carga las opciones del menú
         if (user) {
             return (
+
                 <ul className="menu">
                     {/* Categoría Tradicional */}
                     <li
@@ -53,6 +54,7 @@ const Header = () => {
                     </li>
                 </ul>
             );
+
         }
     };
 

@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { createUserPublication } from "../../Services/CreatePublicationService";
-import ModalConfirm from "../../Components/Modal/Modal";
+
+import ModalConfirm from "../../Components/ModalConfirm/ModalConfirm"; // Import the Modal component
+
 import "./CreatePublication.css";
 import { UserContext } from "../../Context/user";
 
@@ -55,6 +57,7 @@ function CreatePublication() {
             ]
         }));
     };
+  
 
     const handleRemoveMaterial = (index) => {
         if (index === 0) {
@@ -101,6 +104,7 @@ function CreatePublication() {
         // Open the confirmation modal for submission
         setIsSubmitModalOpen(true);
     };
+
 
     const confirmSubmitPublication = async () => {
         try {
@@ -268,5 +272,6 @@ function CreatePublication() {
         </div>
     );
 }
-
 export default CreatePublication;
+
+

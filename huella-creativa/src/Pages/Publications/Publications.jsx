@@ -20,11 +20,15 @@ const Publications = () => {
     useEffect(() => {
         console.log("metodoId recibido:", metodoId);
         const getPublications = async () => {
-            const response = await getAllPublications(metodoId);
-            setPublications(response.data);
-        };
-        getPublications();
-    }, [metodoId]);
+
+            const response = await getAllPublications(metodoId) 
+            console.log(response.data) //Revisar esta linea
+            setPublications(response.data)
+            
+        }
+        getPublications()
+    },[metodoId])
+
 
     // Open the modal and set the selected publication
     const openModal = (publication) => {
@@ -101,6 +105,7 @@ const Publications = () => {
 
     // Mantener el método displayPublications sin modificaciones
     const displayPublications = () => {
+
         // Comprueba si hay publicaciones disponibles
         if (!publications || publications.length === 0) {
             return <p>No hay publicaciones disponibles.</p>;
@@ -224,6 +229,7 @@ const Publications = () => {
             </section>
 
             {/* Modal */}
+
             {showModal && (
                 <Modal publication={selectedPublication} closeModal={closeModal} />
             )}

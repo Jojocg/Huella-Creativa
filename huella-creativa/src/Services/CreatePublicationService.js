@@ -12,4 +12,6 @@ export const createUserPublication = async (id, body) => {
   } catch (error) {
     console.error(error.message);
   }
+
 };
+
