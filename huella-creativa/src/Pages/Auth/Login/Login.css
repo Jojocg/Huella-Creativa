@@ -7,10 +7,11 @@ body {
 
 }
 
+
 /* Sección de Login */
 .login {
     position: relative;
-    min-height: 100vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,22 +47,24 @@ body {
 
 /* Formulario de inicio de sesión */
 .login-form {
-    width: 90%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 800px; /* Limita el ancho máximo */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Alinea los hijos al centro */
+    justify-content: center; /* Centra verticalmente los hijos */
     gap: 15px;
     z-index: 2;
 }
 
 .input-wrapper {
     width: 100%;
+    max-width: 400px; /* Igual al máximo del formulario */
 }
 
 .input-wrapper input {
-    width: 100%;
-    padding: 12px 20px;
+    width: 100%; /* Ajusta al ancho del contenedor */
+    padding: 12px 25px; /* Mantén el padding para consistencia */
     border-radius: 25px;
     border: 2px solid #4037FF;
     outline: none;
@@ -72,6 +75,8 @@ body {
     transition: all 0.3s ease;
 }
 
+
+
 .input-wrapper input:focus {
     border-color: #BAF241;
     background-color: #FFFFFF;
@@ -79,7 +84,8 @@ body {
 
 /* Botón de envío */
 .button_login {
-    width: 100%;
+    width: 100%; /* Igual al ancho del formulario */
+    max-width: 400px; /* Limita el ancho máximo */
     padding: 12px 25px;
     border-radius: 25px;
     border: none;
@@ -90,6 +96,7 @@ body {
     transition: all 0.3s ease;
     text-align: center;
 }
+
 
 
 
@@ -171,7 +178,7 @@ margin: 20px 0;
 .pagination-dots .dot {
 width: 10px;
 height: 10px;
-background-color: #D8D8D8;
+background-color: #ffffff;
 border-radius: 50%;
 transition: all 0.3s ease;
 }

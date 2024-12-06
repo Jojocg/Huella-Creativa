@@ -106,7 +106,7 @@ const Login = () => {
                     ¿No tienes cuenta?
                 </p>
                     <button type="submit" className="button_register">
-                        <Link to="/homeLogin">
+                        <Link to="/auth/login/auth/signup">
                         Regístrate
                         </Link>
                     </button>

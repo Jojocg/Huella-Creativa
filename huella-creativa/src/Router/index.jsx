@@ -7,6 +7,7 @@ import Signup from "../Pages/Auth/Signup/Signup";
 import Publications from "../Pages/Publications/Publications";
 import CreatePublication from "../Pages/CreatePublication/CreatePublication";
 import HomeLogin from "../Pages/HomeLogin/HomeLogin";
+import UserProfile from "../Pages/UserProfile/UserProfile";
 
 const checkAuthLoader = () => {
     const token = localStorage.getItem("token");
@@ -33,15 +34,22 @@ const router = createBrowserRouter([
                         path: "login/auth/signup",
                         element: <Signup />,
                     },
+
                     {
                         path: "login",
                         element: <Login />,
                     },
+
                 ],
             },
             {
                 path: "/homeLogin",
                 element: <HomeLogin />,
+            },
+            {
+                path: "user-profile",
+                element: <UserProfile />,
+                loader: checkAuthLoader, // Para restringir acceso si no está autenticado
             },
             {
                 path: "/publications/:metodoId",
