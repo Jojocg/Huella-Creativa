@@ -20,7 +20,7 @@ const Login = () => {
             if (response) {
                 localStorage.setItem("token", response.data.token);
                 setUser({nombre: response.data.usuario, publicoId: response.data.publicoId}) //esto porque lo añadimos en nuestra API como respuesta//añadido
-                console.log(user) //revisar esta línea
+                console.log(response) //revisar esta línea
                 navigate("/homeLogin");
             } else {
                 setError("Revisa los datos introducidos");

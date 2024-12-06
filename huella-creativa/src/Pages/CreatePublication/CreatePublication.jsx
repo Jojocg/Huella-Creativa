@@ -108,6 +108,7 @@ function CreatePublication() {
 
     const confirmSubmitPublication = async () => {
         try {
+            console.log(user.publicoId)
             await createUserPublication(user.publicoId, publicationData);
             console.log("Publicación creada:", publicationData);
             navigate(`/publications/${metodoId}`); // Navigate to another page after creation
