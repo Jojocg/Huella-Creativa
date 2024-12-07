@@ -21,7 +21,7 @@ const Publications = () => {
         console.log("metodoId recibido:", metodoId);
         const getPublications = async () => {
 
-            const response = await getAllPublications(metodoId) 
+            const response = await getAllPublications(metodoId) // the response is all the publications that coincide with the metodoId
             console.log(response.data) //Revisar esta linea
             setPublications(response.data)
             
