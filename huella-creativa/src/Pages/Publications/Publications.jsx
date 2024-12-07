@@ -130,6 +130,7 @@ const Publications = () => {
                     key={publication.id}
                     className="gallery-item"
                     onClick={() => openModal(publication)}
+                   
                 >
                     <div className="image-container">
                         <img

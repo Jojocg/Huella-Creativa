@@ -20,6 +20,16 @@ const Modal = ({ publication, closeModal }) => {
                 <p><a href={publication.link}>{publication.link}</a></p>
                 <p>{formattedDate}</p>
                 {publication.imagen && <img src={publication.imagen} alt={publication.titulo} />}
+                <h4>Materials Used</h4>
+                {publication.metodo && publication.metodo.materiales && publication.metodo.materiales.length > 0 ? (
+                    <ul>
+                        {publication.metodo.materiales.map((material, index) => (
+                            <li key={index}>{material.nombre}</li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>No materials listed for this publication.</p>
+                )}
                 <button onClick={closeModal}>Close</button>
 
             </div>
