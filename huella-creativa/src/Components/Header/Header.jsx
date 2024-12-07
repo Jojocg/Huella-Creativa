@@ -71,20 +71,21 @@ const Header = () => {
         if (!user) {
             return (
                 <>
+                <div className='auth'>
                     <Link to="auth/login"><button className="btn-outline">Inicia sesión</button></Link>
                     <Link to="auth/login/auth/signup"><button className="btn-primary">Regístrate</button></Link>
+                </div>
                 </>
             );
         } else {
             return (
                 // Mostrar avatar y nombre del usuario cuando esté logueado
-                <div className="user-avatar">
+                <div className="user-controls">
                     <img src="/AVATAR.png" alt="Avatar" className="avatar-icon" />
                     {/* <h3>{user}</h3> */}
-
-                    <div>
-                    <button className="btn-primary" onClick={logout}>Cerrar Sesión</button>
-                    </div>
+        
+                    <button className="logout" onClick={logout}>Cerrar Sesión</button>
+                  
                 </div>
 
             );
@@ -94,7 +95,7 @@ const Header = () => {
     return (
         <>
             <header className="navbar">
-                {/* Logo */}
+
                 {/* Logo */}
                 <div className="logo">
                     <Link to={user ? "/homeLogin" : "/"}>
@@ -109,6 +110,7 @@ const Header = () => {
                 </nav>
 
                     {/* Modo oscuro */}
+                    <section className="users">
                     <div className="modo">
                         <Link to="/dark">
                         <img src="/modos-28.svg" alt="Modo oscuro" />
@@ -117,11 +119,11 @@ const Header = () => {
 
                 {/* Controles del usuario */}
                 <div className="user-controls">
-                    {/* Botones o avatar del usuario */}
-                    <div className="login-register">
+    
                         {loadAuth()}
-                    </div>
+   
                 </div>
+                </section>
             </header>
         </>
     );
