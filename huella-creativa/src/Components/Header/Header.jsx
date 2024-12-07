@@ -1,16 +1,24 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { UserContext } from "../../Context/user";
 import './Header.css';
 
 const Header = () => {
-    const { user } = useContext(UserContext); // Contexto del usuario
+    const { user, setUser } = useContext(UserContext); // Contexto del usuario
     const [activeMenu, setActiveMenu] = useState(null); // Control de los menús desplegables
+    const navigate = useNavigate();
 
-    /* const logout = () => {
+    const logout = async(e) => {
+        try {
+        e.preventDefault();
         localStorage.removeItem("token");
+        setUser(null); // Para eliminar al usuario del contexto
         navigate("/");
-    }; */
+        } catch (error) {
+        console.log(error);
+        }
+
+    };
 
     const loadMethods = () => {
         // Si el usuario está logueado, carga las opciones del menú
@@ -73,7 +81,12 @@ const Header = () => {
                 <div className="user-avatar">
                     <img src="/AVATAR.png" alt="Avatar" className="avatar-icon" />
                     {/* <h3>{user}</h3> */}
+
+                    <div>
+                    <button className="btn-primary" onClick={logout}>Cerrar Sesión</button>
+                    </div>
                 </div>
+
             );
         }
     };
