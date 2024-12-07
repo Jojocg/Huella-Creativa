@@ -15,6 +15,18 @@ const Modal = ({ publication, closeModal }) => {
         <div className="modal-overlay" onClick={closeModal}>
 
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="profile">
+                            <img
+                                src="AVATAR.png"
+                                alt="Avatar"
+                                className="avatar"
+                            />
+                            <span className="name">
+                                <span className="name">
+                                    {publication?.publico?.nombre_usuario || publication?.publico?.privado?.nombre || "Nombre no disponible"}
+                                </span>
+                            </span>
+                        </div>
                 <h3>{publication.titulo}</h3>
                 <p>{publication.contenido}</p>
                 <p><a href={publication.link}>{publication.link}</a></p>
