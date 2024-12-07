@@ -147,7 +147,6 @@ button {
   flex: 2.5;
 }
 
-
 .modo {
   display: flex;
   justify-content: center;
@@ -161,8 +160,6 @@ button {
 .modo img{
   width: 20%;
 }
-
-
 
 
 .user-controls {
