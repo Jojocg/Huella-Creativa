@@ -82,8 +82,9 @@ const Header = () => {
                 // Mostrar avatar y nombre del usuario cuando esté logueado
 <div className="user-controls">
     {/* Link para navegar al perfil del usuario */}
-    <Link to="profile">
+    <Link to="/profile">
         <img src="/avatarDefault.png" alt="Avatar" className="avatar-icon" />
+        
     </Link>
 
     {/* Botón para cerrar sesión */}

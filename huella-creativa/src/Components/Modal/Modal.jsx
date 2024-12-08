@@ -17,7 +17,7 @@ const Modal = ({ publication, closeModal }) => {
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="profile">
                             <img
-                                src="AVATAR.png"
+                                src="/avatarDefault.png"
                                 alt="Avatar"
                                 className="avatar"
                             />
@@ -29,15 +29,15 @@ const Modal = ({ publication, closeModal }) => {
                         </div>
                 <h3>{publication.titulo}</h3>
                 <p>{publication.contenido}</p>
-                <p><a href={publication.link}>{publication.link}</a></p>
+                <p>Tutorial: <a href={publication.link}>{publication.link}</a></p>
                 <p>{formattedDate}</p>
                 {publication.imagen && <img src={publication.imagen} alt={publication.titulo} />}
-                <h4>Materials Used</h4>
+                <h4>Materiales</h4>
                 {publication.materiales && publication.materiales.length > 0 ? (
                     <ul>
                         {publication.materiales.map((material, index) => (
                             <li key={index}>
-                                <strong>{material.nombre}</strong>: {material.descripcion} (Marca: {material.marca})
+                                <strong>{material.nombre}</strong>: {material.descripcion} <br></br>(Marca: {material.marca})
                             </li>
                         ))}
                     </ul>
@@ -46,7 +46,7 @@ const Modal = ({ publication, closeModal }) => {
                 )}
 
 
-                <button onClick={closeModal}>Close</button>
+                <button onClick={closeModal}>X</button>
 
             </div>
         </div>

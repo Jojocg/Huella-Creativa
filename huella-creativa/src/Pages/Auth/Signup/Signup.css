@@ -8,17 +8,17 @@
     justify-content: center;
     overflow: visible;
     padding: 20px;
-    margin: 4%;
+
 }
 
 /* Mensaje de bienvenida */
 .SayHi h1 {
-    font-size: 3.5rem;
-    font-family: "Fractul", sans-serif;
+    font-size: 4.5rem;
+    font-family: 'Fractul', sans-serif;
     font-weight: 700;
-    color: #0F1020;
-    text-align: center;
+    color: #0F1020; 
     margin-bottom: 20px;
+    line-height: 105%;
 }
 
 .SayHi h1 .highlight {
@@ -26,10 +26,29 @@
 }
 
 .SayHi p {
-    font-size: 1rem;
-    text-align: center;
-    color: #5A23AD;
+    font-size: 1.2rem;
+    font-family: 'Outfit', sans-serif;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: #363636;
     margin-bottom: 30px;
+    text-align: center;
+}
+
+
+
+.signup .hero-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    pointer-events: none; 
+    animation: float 3s infinite ease-in-out;
 }
 
 /* Formulario de registro */
@@ -170,7 +189,7 @@
     margin-top: 20px;
 }
 
-.button_login {
+.login-prompt .button_login {
     background: none;
     border: none;
     color: #4037FF;
@@ -179,7 +198,7 @@
     font-size: 1rem;
 }
 
-.button_login a {
+.login-prompt .button_login a {
     color: inherit;
     text-decoration: none;
 }

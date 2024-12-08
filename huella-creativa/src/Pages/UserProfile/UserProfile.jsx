@@ -62,7 +62,7 @@ const UserProfile = () => {
                     <section id="BasicInfo-profile">
                         <div className="userName-profile">
                             <h1 className="titleProfile">
-                                ¡Hola, <span className="highlight-profile">{user || "Usuario"}!</span>
+                                ¡Hola, <span className="highlight-profile">{user?.nombre || "Usuario"}!</span>
                             </h1>
                             <p>Aquí podrás ver y editar tus datos personales.</p>
                         </div>
