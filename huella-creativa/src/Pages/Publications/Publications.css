@@ -75,7 +75,7 @@
 
 .gallery-item-publication {
     background: #FFF;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
@@ -258,4 +258,62 @@
     font-size: 0.9rem;
     font-family: 'Outfit', sans-serif;
     color: #363636;
+}
+
+
+.advertisement-section .highlightAds {
+    font-size: 2.5rem;
+    color: #4037FF; 
+    font-weight: 600;
+    margin-bottom: 2%;
+}
+
+.advertisement-section .advertisement-description{
+    color: #4037FF;
+}
+
+.advertisement-section .advertisement-title{
+    color: #0F1020;
+    font-size: 2.5rem;
+
+    font-weight: 600;
+    margin-bottom: 2%;
+}
+
+.btn-arrow-publication {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative; /* Necesario para que el ::after esté relativo al botón */
+    width: 15%; /* Ajusta el tamaño al botón */
+    height: auto; /* Asegura una proporción consistente */
+    margin-left: auto; 
+}
+
+.btn-arrow-publication img {
+    display: block;
+    width: 100%; /* Ocupa todo el ancho del botón */
+    height: 100%; /* Ocupa todo el alto del botón */
+    transition: opacity 0.3s ease; /* Transición suave */
+}
+
+.btn-arrow-publication::after {
+    content: '';
+    position: absolute; /* Relativo al botón */
+    top: 0; /* Alineado perfectamente al borde superior */
+    left: 0; /* Alineado perfectamente al borde izquierdo */
+    width: 100%; /* Coincide con el tamaño del botón */
+    height: 100%; /* Coincide con el tamaño del botón */
+    background-image: url('/flechas-21.svg'); /* Imagen azul */
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease; /* Suaviza la transición al aparecer */
+}
+
+.btn-arrow-publication:hover::after {
+    opacity: 1; /* Muestra la imagen azul al pasar el cursor */
 }

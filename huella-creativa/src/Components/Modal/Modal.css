@@ -7,54 +7,83 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: flex-start; /* Alinea el modal en la parte superior */
     z-index: 999; /* Asegura que esté encima de todo */
+    padding-top: 20px; /* Espaciado en la parte superior */
 }
 
-/* Modal Content */
+
 .modal-content {
     background-color: #ffffff;
     border-radius: 15px;
-    padding: 30px;
-    width: 90%;
-    max-width: 600px; /* Limita el ancho máximo */
+    padding: 20px;
+    width: 95%; /* Amplía el ancho al 95% del viewport */
+    max-width: 1200px; /* Ajusta el ancho máximo para pantallas grandes */
+    height: calc(100vh - 40px); /* Ocupa todo el espacio restante menos 40px (superior e inferior) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
-    overflow: auto; /* Agrega scroll si el contenido excede el tamaño */
-    max-height: 90vh; /* Limita la altura máxima */
-}
-
-/* Header Section (Profile) */
-.profile {
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    scroll-behavior: smooth; /* Suaviza el scroll */
 }
 
-.profile .avatar {
+/* Perfil */
+.profileModal {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea el avatar y el nombre en el centro verticalmente */
+    gap: 15px; /* Espacio entre el avatar y el contenedor de texto */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 3%;
+    left: 3%;
+}
+
+
+.profileModal .info {
+    display: flex;
+    flex-direction: column; /* Coloca el nombre encima de la fecha */
+    align-items: flex-start; /* Alinea los textos a la izquierda */
+}
+
+.AvatarNameModal{
+    display: flex;  
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.profileModal .avatarModal {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 15px;
+  }
+  
+.profileModal .nameModal {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4037FF; 
+  }
+
+
+.profileModal .info .date {
+    font-size: 0.9rem;
+    color: #121212;
+    font-style: italic;
 }
 
-.profile .name {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #4037FF;
-}
-
-/* Modal Title */
-.modal-content h3 {
-    font-size: 1.8rem;
+/* Contenido */
+.modal-content .h3Modal {
+    font-size: 2.5rem;
     font-weight: 700;
     color: #0F1020;
     margin-bottom: 10px;
 }
 
-/* Modal Paragraphs */
+
 .modal-content p {
     font-size: 1rem;
     color: #5A23AD;
@@ -62,7 +91,7 @@
     word-wrap: break-word; /* Asegura que los enlaces largos no rompan el diseño */
 }
 
-/* Material List */
+/* Materiales */
 .modal-content ul {
     list-style-type: none;
     padding: 0;
@@ -88,18 +117,19 @@
 /* Modal Image */
 .modal-content img {
     display: block;
-    width: 100%;
-    height: auto;
+    max-width: 100%; /* Asegura que no exceda el ancho del modal */
+    max-height: 400px; /* Limita la altura de la imagen */
     border-radius: 10px;
-    margin-top: 15px;
+    margin: 0 auto; /* Centra la imagen */
+    object-fit: cover; /* Ajusta la imagen al contenedor */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Close Button */
+/* Button */
 .modal-content button {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+    position: absolute; /* Se mantiene visible durante el scroll */
+    top: 10px; /* Fija el botón a 10px desde la parte superior del modal */
+    right: 10px; /* Margen derecho dentro del modal */
     background-color: #4037FF;
     color: #FFFFFF;
     border: none;
@@ -110,10 +140,63 @@
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Asegura que el botón esté siempre encima del contenido */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .modal-content button:hover {
     background-color: #BAF241;
     transform: scale(1.1);
+}
+
+
+/* Image Container */
+.image-container-publication img {
+    display: block;
+    max-width: 100%;
+    max-height: 400px;
+    margin: 2% auto; /* Centrar horizontalmente */
+    border-radius: 10px;
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.h2Modal{
+    color: #4037FF;
+}
+
+/* Likes */
+.statsModal {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin: 2%; 
+
+}
+
+.statsModal .likesModal {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Indica que se puede hacer clic */
+    gap: 10px; /* Espacio entre el ícono y el texto */
+}
+
+.statsModal .likesModal .iconModal {
+    width: 25px; /* Asegura un tamaño suficiente para el SVG */
+    height: 25px;
+    display: block; /* Evita comportamiento inesperado de inline-block */
+    margin: 0; /* Remueve cualquier margen o espacio externo */
+    padding: 0; /* Elimina relleno innecesario */
+    box-sizing: content-box; /* Animación de clic */
+}
+
+.statsModal .likesModal .iconModal:hover {
+    transform: scale(1.2); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}
+
+.statsModal .likesModal span {
+    font-size: 1rem;
+    color: #343434;
+    font-weight: 500;
 }
