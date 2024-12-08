@@ -73,7 +73,7 @@ const Login = () => {
 
                     <button type="submit" className="button_login">
                         <Link to="/HomeLogin">
-                        LogIn
+                        Iniciar Sesión
                         </Link>
                     </button>
                 </form>
