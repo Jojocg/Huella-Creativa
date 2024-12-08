@@ -132,48 +132,53 @@ function CreatePublication() {
         setIsSubmitModalOpen(false); // Just close the modal if cancelled
     };
 
+
     return (
-        <div>
-            <form onSubmit={handleSubmitModalOpen}>
-                <section>
-                    <label>
+    <div className="createPublicationPage">
+            <form onSubmit={handleSubmitModalOpen} className="formCreate">
+                <section className="sectionCreate">
+                    <label className="labelCreate">
                         Imagen:
                         <input
                             type="text"
                             name="imagen"
+                            className="inputCreate"
                             onChange={handleChangePublicationData}
                         />
                     </label>
-                    <label>
-                        Título <span>*</span>:
+                    <label className="labelCreate">
+                        Título <span className="required">*</span>:
                         <input
                             type="text"
                             name="titulo"
+                            className="inputCreate"
                             onChange={handleChangePublicationData}
                             required
                         />
                     </label>
-                    <label>
-                        Contenido <span>*</span>:
-                        <input
-                            type="text"
+                    <label className="labelCreate">
+                        Contenido <span className="required">*</span>:
+                        <textarea
                             name="contenido"
+                            className="textareaCreate"
                             onChange={handleChangePublicationData}
                             required
                         />
                     </label>
-                    <label>
+                    <label className="labelCreate">
                         Enlace:
                         <input
                             type="text"
                             name="link"
+                            className="inputCreate"
                             onChange={handleChangePublicationData}
                         />
                     </label>
-                    <label>
-                        Método <span>*</span>:
+                    <label className="labelCreate">
+                        Método <span className="required">*</span>:
                         <select
                             name="metodo"
+                            className="selectCreate"
                             onChange={handleChangePublicationData}
                             value={publicationData.metodo}
                             required
@@ -183,10 +188,11 @@ function CreatePublication() {
                             <option value="digital">Digital</option>
                         </select>
                     </label>
-                    <label>
+                    <label className="labelCreate">
                         Categoría artística <span>*</span>:
                         <select
                             name="categoria_artistica"
+                            className="selectCreate"
                             onChange={handleChangePublicationData}
                             value={publicationData.categoria_artistica}
                             required
@@ -199,14 +205,11 @@ function CreatePublication() {
                             <option value="animación">Animación</option>
                         </select>
                     </label>
-
-                    <label>
-                        Materiales usados:
-                    </label>
+                </section>
                     {publicationData.materiales.map((material, index) => (
                         <div key={index} className="material-form">
                             <label>
-                                Nombre del material <span>*</span>:
+                                Nombre del material <span className="required">*</span>:
                                 <input
                                     type="text"
                                     name="nombre"
@@ -216,7 +219,7 @@ function CreatePublication() {
                                 />
                             </label>
                             <label>
-                                Descripción <span>*</span>:
+                                Descripción <span className="required">*</span>:
                                 <input
                                     type="text"
                                     name="descripcion"
@@ -226,7 +229,7 @@ function CreatePublication() {
                                 />
                             </label>
                             <label>
-                                Marca <span>*</span>:
+                                Marca <span className="required">*</span>:
                                 <input
                                     type="text"
                                     name="marca"
@@ -256,7 +259,7 @@ function CreatePublication() {
                     <button type="button" onClick={handleAddMaterial}>
                         Añadir Material
                     </button>
-                </section>
+             
                 {error && <p>{error}</p>}
                 <section>
                     <button type="submit">Crear</button>
