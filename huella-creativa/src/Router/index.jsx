@@ -48,7 +48,7 @@ const router = createBrowserRouter([
                 element: <HomeLogin />,
             },
             {
-                path: "user-profile",
+                path: "/profile",
                 element: <UserProfile />,
                 loader: checkAuthLoader, // Para restringir acceso si no está autenticado
             },

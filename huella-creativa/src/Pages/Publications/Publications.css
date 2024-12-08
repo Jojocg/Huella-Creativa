@@ -1,82 +1,261 @@
-/* Publications Header */
+/* Header Section */
 .publications-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px auto;
-    padding: 20px;
-    width: 80%;
+    text-align: center;
+    background-color: #f3f4f6; 
+    padding: 50px 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.section-title {
-    font-size: 3rem;
+.publications-header h1 {
+    font-size: 3.5rem;
+    font-family: 'Fractul', sans-serif;
+    font-weight: 700;
     color: #0F1020;
-    font-weight: bold;
+    margin-bottom: 0;
 }
 
-.section-subtitle {
+.publications-header h2 {
     font-size: 2.5rem;
-    color: #BAF241;
+    color: #4037FF; 
+    font-weight: 600;
+    margin-bottom: 2%;
 }
 
-.section-description {
+.publications-header p {
     font-size: 1.2rem;
     color: #363636;
-    max-width: 60%;
+    margin-bottom: 30px;
 }
 
-/* Sort Dropdown */
+/* Botón Crear Publicación */
+.publications-header button {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: #4037FF;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.publications-header button:hover {
+    background-color: #0F1020;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dropdown de Orden */
 .sort-container {
-    display: flex;
-    align-items: center;
+    margin: 20px auto;
 }
 
 .sort-dropdown {
-    font-size: 1rem;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #4037FF;
     border-radius: 20px;
-    background-color: #f9f9f9;
+    background-color: white;
+    color: #4037FF;
+    font-size: 1rem;
+    outline: none;
 }
 
-/* Gallery Section */
-.gallery {
+/* Galería */
+.gallery-publication {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    margin: 20px auto;
     padding: 20px;
-    width: 80%;
+    margin: auto;
+    width: 80%; /* Más ancha que la home */
+    justify-content: center;
 }
 
-/* Advertisement Section */
-.advertisement-section {
+.gallery-item-publication {
+    background: #FFF;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gallery-item-publication:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.image-container-publication{
+    overflow: hidden;
+    width: 50%;
+}
+
+.gallery-item-publication .image-container-publication {
+    position: relative;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    height: 200px; /* Define una altura fija para los contenedores */
+    overflow: hidden; /* Oculta cualquier exceso de las imágenes */
+    display: flex; /* Asegura un alineamiento flexible */
+    align-items: center; /* Centra verticalmente la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+}
+
+.gallery-item-publication .image-container-publication img {
+    width: 100%; /* Imagen ocupa todo el ancho del contenedor */
+    height: 100%; /* Imagen ocupa todo el alto del contenedor */
+    object-fit: cover; /* Hace que la imagen se recorte proporcionalmente sin distorsión */
+}
+
+.image-container-publication img {
+
+    transition: opacity 0.3s ease;
+    opacity: 0.9;
+}
+
+.image-container-publication:hover img {
+    opacity: 1;
+}
+
+.gallery-info-publication {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.profile {
+    display: flex;
     align-items: center;
-    padding: 20px;
-    background-color: #f0f0f0;
-    margin: 20px auto;
-    width: 80%;
-    border-radius: 10px;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #4037FF;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #5A23AD;
+    margin: 0;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.btn-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+}
+
+.btn-arrow img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.btn-arrow:hover img {
+    opacity: 0;
+}
+
+.btn-arrow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-image: url('/flechas-21.svg'); /* Llamada a la nueva imagen */
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-arrow:hover::after {
+    opacity: 1;
+}
+
+/* Sección de Anuncios */
+.advertisement-section {
+    width: 100vw; /* Ocupa todo el ancho del viewport */
+    background-color: #f4f4f4; /* Color de fondo opcional */
+    padding: 20px 0; /* Espaciado interno */
+    margin: 0; /* Quita márgenes externos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras opcionales */
+}
+
+.advertisement-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.advertisement-header h1 {
+    font-size: 2rem;
+    font-family: 'Fractul', sans-serif;
+    color: #4037FF;
+    font-weight: 700;
+}
+
+.advertisement-header p {
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    color: #BA23AD;
+}
+
+.advertisement-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .ad-card {
+    flex: 1 1 calc(33.333% - 20px); /* Tres columnas ajustables */
+    max-width: calc(33.333% - 20px);
+    background: white;
+    border-radius: 0; /* Sin bordes redondeados */
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 30%;
 }
 
 .ad-card img {
-    width: 80%;
-    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
     margin-bottom: 10px;
 }
 
 .ad-card p {
-    font-size: 1rem;
-    color: #333;
+    font-size: 0.9rem;
+    font-family: 'Outfit', sans-serif;
+    color: #363636;
 }

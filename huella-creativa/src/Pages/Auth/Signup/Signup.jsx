@@ -38,7 +38,7 @@ function Signup() {
                     localStorage.setItem("token", response.data.token);
 
                     setUser(formData.nombre);
-                    navigate("/user-profile");
+                    navigate("/profile");
 
                 }
             } else {

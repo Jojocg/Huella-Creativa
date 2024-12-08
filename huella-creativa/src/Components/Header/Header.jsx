@@ -80,13 +80,16 @@ const Header = () => {
         } else {
             return (
                 // Mostrar avatar y nombre del usuario cuando esté logueado
-                <div className="user-controls">
-                    <img src="/AVATAR.png" alt="Avatar" className="avatar-icon" />
-                    {/* <h3>{user}</h3> */}
-        
-                    <button className="logout" onClick={logout}>Cerrar Sesión</button>
-                  
-                </div>
+<div className="user-controls">
+    {/* Link para navegar al perfil del usuario */}
+    <Link to="profile">
+        <img src="/avatarDefault.png" alt="Avatar" className="avatar-icon" />
+    </Link>
+
+    {/* Botón para cerrar sesión */}
+    <button className="logout" onClick={logout}>Cerrar Sesión</button>
+</div>
+
 
             );
         }

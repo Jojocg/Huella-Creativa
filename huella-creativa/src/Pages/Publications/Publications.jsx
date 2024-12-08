@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
 import { getAllPublications } from "../../Services/PublicationService";
+import { UserContext } from "../../Context/user"; // Importa el contexto de usuario
 import Modal from "../../Components/Modal/Modal";
 import "./Publications.css";
 
@@ -14,6 +15,8 @@ const Publications = () => {
     const [selectedPublication, setSelectedPublication] = useState(null); // To track the selected publication
     const [showModal, setShowModal] = useState(false); // To control the visibility of the modal
     const [sortOption, setSortOption] = useState("newest"); // Sorting option
+
+    const { user } = useContext(UserContext);
 
 
 
@@ -128,20 +131,20 @@ const Publications = () => {
             return (
                 <div
                     key={publication.id}
-                    className="gallery-item"
+                    className="gallery-item-publication"
                     onClick={() => openModal(publication)}
                    
                 >
-                    <div className="image-container">
+                    <div className="image-container-publication">
                         <img
-                            src={publication.imagen || "/default-image.png"} // Imagen por defecto si no hay una imagen
+                            src={publication.imagen || "/fondo_web.png"} // Imagen por defecto si no hay una imagen
                             alt={publication.titulo || "Sin título"}
                         />
                     </div>
-                    <div className="gallery-info">
+                    <div className="gallery-info-publication">
                         <div className="profile">
                             <img
-                                src="AVATAR.png"
+                                src="/avatarDefault.png"
                                 alt="Avatar"
                                 className="avatar"
                             />
@@ -158,7 +161,7 @@ const Publications = () => {
                                 to={`/publications/${publication.id}`}
                                 className="btn-arrow"
                             >
-                                <img
+                                <img 
                                     src="/flechas-20.svg"
                                     alt="Flecha verde"
                                 />
@@ -201,10 +204,14 @@ const Publications = () => {
             </header>
 
             {/* Publications Section */}
-            <section className="gallery">{displayPublications()}</section>
+            <section className="gallery-publication">{displayPublications()}</section>
 
             {/* Advertisement Section */}
             <section className="advertisement-section">
+            <div className="advertisement-header">
+        <h1>Hola, {user.nombre || "Usuario"},</h1>
+        <p>descubre las ofertas de tus marcas favoritas</p>
+    </div>
                 <div className="ad-card">
                     <img src="/ads/adobe-illustrator.png" alt="Adobe Illustrator" />
                     <p>
