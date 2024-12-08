@@ -1,0 +1,234 @@
+/* CONTENEDOR GENERAL */
+.createPublicationPage {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('/fondo_web.png') repeat;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* FORMULARIO PRINCIPAL */
+.formCreate {
+    margin: 0 auto;
+    max-width: 50vw; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%; 
+}
+
+/* SECCIÓN DEL FORMULARIO */
+.sectionCreate {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ETIQUETAS */
+.labelCreate {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #4037FF;
+    margin-bottom: 5px;
+}
+
+/* INPUTS Y TEXTAREA */
+.inputCreate,
+.textareaCreate,
+.selectCreate {
+    width: 90%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid #4037FF;
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    background-color: rgba(255, 255, 250, 0.8);
+    color: #5A23AD;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.required{
+    color: red;
+}
+
+/* Textarea */
+.textareaCreate {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Select */
+.selectCreate {
+    appearance: none; /* Remueve estilo por defecto */
+    cursor: pointer;
+    background: rgba(255, 255, 250, 0.8);
+}
+
+/* FOCUS */
+.inputCreate:focus,
+.textareaCreate:focus,
+.selectCreate:focus {
+    border-color: #BAF241;
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+/* BOTONES */
+button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Botón Principal (Crear) */
+button[type="submit"] {
+    background-color: #4037FF;
+    color: #FFFFFF;
+    font-weight: bold;
+    align-self: center; /* Centra el botón */
+}
+
+button[type="submit"]:hover {
+    background-color: #0F1020;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón Secundario (Añadir Material) */
+button[type="button"] {
+    background-color: #BAF241;
+    color: #4037FF;
+    font-weight: bold;
+    align-self: center; /* Centra el botón */
+}
+
+button[type="button"]:hover {
+    background-color: #A2D638;
+    transform: translateY(-2px);
+}
+
+/* TARJETAS DE MATERIALES */
+.material-form {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* INPUTS DENTRO DE TARJETAS */
+.material-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #DDD;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #5A23AD;
+    transition: border-color 0.3s ease;
+}
+
+/* FOCUS EN INPUTS DE MATERIALES */
+.material-form input:focus {
+    border-color: #4037FF;
+    outline: none;
+}
+
+/* BOTÓN ELIMINAR MATERIAL */
+.material-form button {
+    background-color: #FF6B6B;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Alineado al inicio */
+}
+
+.material-form button:hover {
+    background-color: #FF4949;
+}
+
+/* MENSAJES DE ERROR */
+.errorCreate {
+    color: red;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: -10px;
+}
+
+/* TÍTULO */
+.createTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #0F1020;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* BOTÓN DE AÑADIR MATERIAL */
+.add-material-button {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background-color: #BAF241;
+    color: #4037FF;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: center; /* Centrado */
+}
+
+.add-material-button:hover {
+    background-color: #A2D638;
+    transform: translateY(-2px);
+}
+
+/* AJUSTES RESPONSIVOS */
+@media (max-width: 768px) {
+    .formCreate {
+        max-width: 90%;
+    }
+
+    .sectionCreate {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .formCreate {
+        max-width: 95%;
+    }
+
+    .inputCreate,
+    .textareaCreate,
+    .selectCreate {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+}

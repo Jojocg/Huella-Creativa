@@ -48,13 +48,13 @@
     color: #BAF241;
   }
   
-  .input-wrapper {
+  .input-wrapper-footer {
     display: flex;
     gap: 10px;
     margin-top: 10px;
   }
   
-  .input-wrapper input {
+  .input-wrapper-footer input {
     flex: 1;
     padding: 10px 20px;
     border-radius: 25px;
@@ -65,7 +65,7 @@
     background-color: rgba(255, 255, 250, 0.8);
   }
   
-  .input-wrapper button {
+  .input-wrapper-footer button {
     padding: 10px 20px;
     border-radius: 25px;
     border: none;

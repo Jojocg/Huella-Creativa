@@ -157,21 +157,21 @@ const Publications = () => {
                         <p className="description">{publication.titulo || "Sin título"}</p>
                         <p className="date">Fecha: {formattedDate}</p>
                         <div className="stats">
-                            <Link
-                                to={`/publications/${publication.id}`}
-                                className="btn-arrow"
-                            >
-                                <img 
-                                    src="/flechas-20.svg"
-                                    alt="Flecha verde"
-                                />
-                            </Link>
-                        </div>
+                        <button
+                            className="btn-arrow-publication"
+                            onClick={() => openModal(publication)}
+                        >
+                            <img 
+                                src="/flechas-20.svg"
+                                alt="Flecha verde"
+                            />
+                        </button>
                     </div>
                 </div>
-            );
-        });
-    };
+            </div>
+        );
+    });
+};
 
 
     return (
@@ -209,8 +209,8 @@ const Publications = () => {
             {/* Advertisement Section */}
             <section className="advertisement-section">
             <div className="advertisement-header">
-        <h1>Hola, {user.nombre || "Usuario"},</h1>
-        <p>descubre las ofertas de tus marcas favoritas</p>
+        <h1 className="advertisement-title">¡Hola, <span className="highlightAds"> {user.nombre || "Usuario"}!</span></h1>
+        <p className="advertisement-description">Descubre las ofertas de tus marcas favoritas</p>
     </div>
                 <div className="ad-card">
                     <img src="/ads/adobe-illustrator.png" alt="Adobe Illustrator" />

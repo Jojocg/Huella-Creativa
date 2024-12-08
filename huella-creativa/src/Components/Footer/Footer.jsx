@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="newsletter">
                 <h3 className="footer-title">Manténte inspirado</h3>
                 <p className="footer-subtitle">Suscríbete a nuestra newsletter</p>
-                <div className="input-wrapper">
+                <div className="input-wrapper-footer">
                     <input type="email" placeholder="introduce tu mail" />
                     <button className="btn-primary">suscríbete</button>
                 </div>

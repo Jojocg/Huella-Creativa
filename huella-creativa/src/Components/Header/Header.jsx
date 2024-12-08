@@ -88,7 +88,7 @@ const Header = () => {
     </Link>
 
     {/* Botón para cerrar sesión */}
-    <button className="logout" onClick={logout}>Cerrar Sesión</button>
+    <button className="logout" src="/logout" onClick={logout}>Cerrar Sesión</button>
 </div>
 
 
