@@ -61,8 +61,10 @@ const Modal = ({ publication, closeModal }) => {
 
                 {publication.imagen && <img src={publication.imagen || "/fondo_web.png"} alt={publication.titulo} />}
                 <p>{publication.contenido}</p>
+
                 <h2 className='h2Modal'>Tutorial: <a href={publication.link}>{publication.link}</a></h2>
-                <h2 className='h2Modal'>Materiales</h2>
+                <h2 className='h2Modal'>Materiales: </h2>
+
                 {publication.materiales && publication.materiales.length > 0 ? (
                     <ul>
                         {publication.materiales.map((material, index) => (

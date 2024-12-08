@@ -5,12 +5,12 @@ const ModalConfirm = ({ isOpen, onConfirm, onCancel, message}) => {
     if (!isOpen) return null;
 
     return (
-        <div className="modal-overlay">
-            <div className="modal-content">
+        <div className="modal-overlay-confirm">
+            <div className="modal-content-confirm">
                 <h2>{message}</h2>
-                <div className="modal-buttons">
-                    <button onClick={onCancel}>No</button>
-                    <button onClick={onConfirm}>Sí</button>
+                <div className="modal-buttons-confirm">
+                    <button className="button-cancel" onClick={onCancel}>No</button>
+                    <button className="button-confirm" onClick={onConfirm}>Sí</button>
                 </div>
             </div>
         </div>
