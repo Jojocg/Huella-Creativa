@@ -42,26 +42,26 @@ const Login = () => {
             {/* Mensaje de bienvenida */}
         <div className="SayHi">
             <h1>
-                    ¡Hola <br /> <span className="highlight">de nuevo!</span>
+                    ¡Hola <br /> <span className="highlightLogin">de nuevo!</span>
                 </h1>
                 </div>
 
             {/* Formulario de inicio de sesión */}
             <div className="login-form">
                 <form onSubmit={handleLogin}>
-                <div className="input-wrapper">
+                <div className="input-wrapper-login">
                         <input
                             type="email"
-                            placeholder="EMAIL*"
+                            placeholder="email*"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
                     </div>
-                    <div className="input-wrapper">
+                    <div className="input-wrapper-login">
                         <input
                             type="password"
-                            placeholder="CONTRASEÑA"
+                            placeholder="contraseña*"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required

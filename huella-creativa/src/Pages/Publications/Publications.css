@@ -7,7 +7,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.publications-header h1 {
+.publications-header .section-subtitle--publication {
     font-size: 3.5rem;
     font-family: 'Fractul', sans-serif;
     font-weight: 700;
@@ -15,21 +15,21 @@
     margin-bottom: 0;
 }
 
-.publications-header h2 {
+.publications-header .section-title--publication {
     font-size: 2.5rem;
     color: #4037FF; 
     font-weight: 600;
     margin-bottom: 2%;
 }
 
-.publications-header p {
+.publications-header .section-description-publication {
     font-size: 1.2rem;
     color: #363636;
     margin-bottom: 30px;
 }
 
 /* Botón Crear Publicación */
-.publications-header button {
+.publications-header .createBtn {
     margin: 10px 5px;
     padding: 10px 20px;
     border-radius: 30px;
@@ -41,18 +41,18 @@
     border: none;
 }
 
-.publications-header button:hover {
+.publications-header .createBtn:hover {
     background-color: #0F1020;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Dropdown de Orden */
-.sort-container {
+.sort-container-publication {
     margin: 20px auto;
 }
 
-.sort-dropdown {
+.sort-dropdown-publication {
     padding: 10px;
     border: 1px solid #4037FF;
     border-radius: 20px;
@@ -69,7 +69,7 @@
     gap: 20px;
     padding: 20px;
     margin: auto;
-    width: 80%; /* Más ancha que la home */
+    width: 80%; 
     justify-content: center;
 }
 
@@ -77,7 +77,8 @@
     background: #FFF;
     border-radius: 20px 20px 0 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    overflow: visible;
+    position: relative;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -95,18 +96,18 @@
 
 .gallery-item-publication .image-container-publication {
     position: relative;
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
-    height: 200px; /* Define una altura fija para los contenedores */
-    overflow: hidden; /* Oculta cualquier exceso de las imágenes */
-    display: flex; /* Asegura un alineamiento flexible */
-    align-items: center; /* Centra verticalmente la imagen */
-    justify-content: center; /* Centra horizontalmente la imagen */
+    width: 100%;
+    height: 200px; 
+    overflow: hidden; 
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
 }
 
 .gallery-item-publication .image-container-publication img {
-    width: 100%; /* Imagen ocupa todo el ancho del contenedor */
-    height: 100%; /* Imagen ocupa todo el alto del contenedor */
-    object-fit: cover; /* Hace que la imagen se recorte proporcionalmente sin distorsión */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
 }
 
 .image-container-publication img {
@@ -128,33 +129,33 @@
     gap: 10px;
 }
 
-.profile {
+.profile-publication {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 5px;
 }
 
-.avatar {
+.avatar-publication {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.name {
+.name-publication {
     font-size: 1rem;
     font-weight: 700;
     color: #4037FF;
 }
 
-.description {
+.description-publication {
     font-size: 1.2rem;
     color: #5A23AD;
     margin: 0;
 }
 
-.stats {
+.stats-publication {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -162,158 +163,134 @@
     padding-top: 10px;
 }
 
-.btn-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background: none;
-    cursor: pointer;
-    position: relative;
-    width: 40px;
-    height: 40px;
-    margin-left: auto;
-}
 
-.btn-arrow img {
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: opacity 0.3s ease;
-}
 
-.btn-arrow:hover img {
-    opacity: 0;
-}
-
-.btn-arrow::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    background-image: url('/flechas-21.svg'); /* Llamada a la nueva imagen */
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.btn-arrow:hover::after {
-    opacity: 1;
-}
 
 /* Sección de Anuncios */
 .advertisement-section {
-    width: 100vw; /* Ocupa todo el ancho del viewport */
-    background-color: #f4f4f4; /* Color de fondo opcional */
-    padding: 20px 0; /* Espaciado interno */
-    margin: 0; /* Quita márgenes externos */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras opcionales */
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-between; /* Separa los elementos horizontales */
+    padding: 40px 5%; /* Espaciado interno */
+    background-color: #f4f4f4; /* Fondo gris claro */
+    margin: 0; /* Sin margen externo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras para realce */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    gap: 20px; /* Espaciado entre elementos */
 }
 
 .advertisement-header {
-    text-align: center;
-    margin-bottom: 20px;
+    flex: 1; /* Ocupa todo el espacio disponible */
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin-right: 20px; /* Espacio a la derecha */
 }
 
 .advertisement-header h1 {
-    font-size: 2rem;
-    font-family: 'Fractul', sans-serif;
-    color: #4037FF;
-    font-weight: 700;
+    font-size: 2rem; /* Tamaño del título */
+    font-weight: 700; /* Negrita */
+    color: #0F1020; /* Color principal */
+    margin-bottom: 10px; /* Espaciado debajo */
+}
+
+.advertisement-header h1 span {
+    color: #4037FF; /* Color destacado */
 }
 
 .advertisement-header p {
-    font-size: 1rem;
-    font-family: 'Outfit', sans-serif;
-    color: #BA23AD;
+    font-size: 1.2rem; /* Tamaño del texto */
+    color: #4037FF; /* Color azul */
+    font-weight: 500; /* Seminegrita */
+    margin-top: 5px; /* Espaciado encima */
 }
 
+/* Grid de anuncios */
 .advertisement-grid {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 20px; /* Espaciado entre anuncios */
+    flex: 3; /* Ocupa más espacio que el encabezado */
+    flex-wrap: wrap; /* Ajusta elementos en varias filas si es necesario */
+    justify-content: space-evenly; /* Espaciado uniforme entre tarjetas */
 }
 
+/* Estilo de tarjeta de anuncio */
 .ad-card {
-    flex: 1 1 calc(33.333% - 20px); /* Tres columnas ajustables */
-    max-width: calc(33.333% - 20px);
-    background: white;
-    border-radius: 0; /* Sin bordes redondeados */
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    flex: 1 1 calc(33.333% - 20px); /* Ajusta el tamaño dinámicamente */
+    max-width: 300px; /* Limita el ancho máximo */
+    background: white; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombras para realce */
+    text-align: center; /* Centra el contenido */
+    position: relative; /* Para posicionar etiquetas */
+    overflow: hidden; /* Evita que los elementos desborden */
 }
 
 .ad-card img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+    max-width: 100%; /* Imagen ocupa todo el ancho */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 15px; /* Espaciado debajo */
 }
 
 .ad-card p {
-    font-size: 0.9rem;
-    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
     color: #363636;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* Etiquetas de descuento */
+.ad-card::after {
+    content: attr(data-badge); /* Usa el atributo data-badge como contenido */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #BA23AD; /* Color morado */
+    color: white; /* Texto blanco */
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 50px; /* Forma de círculo/ovalado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras */
+    z-index: 2; /* Encima de la tarjeta */
 }
 
 
-.advertisement-section .highlightAds {
-    font-size: 2.5rem;
-    color: #4037FF; 
-    font-weight: 600;
-    margin-bottom: 2%;
-}
-
-.advertisement-section .advertisement-description{
-    color: #4037FF;
-}
-
-.advertisement-section .advertisement-title{
-    color: #0F1020;
-    font-size: 2.5rem;
-
-    font-weight: 600;
-    margin-bottom: 2%;
-}
-
-.btn-arrow-publication {
+.gallery-info-publication .btn-arrow-publication {
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
     background: none;
     cursor: pointer;
-    position: relative; /* Necesario para que el ::after esté relativo al botón */
-    width: 15%; /* Ajusta el tamaño al botón */
-    height: auto; /* Asegura una proporción consistente */
+    position: relative; 
+    width: 50px; 
+    height: 50px; 
     margin-left: auto; 
 }
 
-.btn-arrow-publication img {
+.gallery-info-publication .btn-arrow-publication img {
     display: block;
-    width: 100%; /* Ocupa todo el ancho del botón */
-    height: 100%; /* Ocupa todo el alto del botón */
-    transition: opacity 0.3s ease; /* Transición suave */
+    width: 100%; 
+    height: 100%; 
+    z-index: 10; 
+    opacity: 1;
+    transition: opacity 0.3s ease; 
 }
 
-.btn-arrow-publication::after {
+.gallery-info-publication .btn-arrow-publication::after {
     content: '';
-    position: absolute; /* Relativo al botón */
-    top: 0; /* Alineado perfectamente al borde superior */
-    left: 0; /* Alineado perfectamente al borde izquierdo */
-    width: 100%; /* Coincide con el tamaño del botón */
-    height: 100%; /* Coincide con el tamaño del botón */
-    background-image: url('/flechas-21.svg'); /* Imagen azul */
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-image: url('/flechas-21.svg'); 
     background-size: cover;
     background-position: center;
-    opacity: 0; /* Inicialmente invisible */
-    transition: opacity 0.3s ease; /* Suaviza la transición al aparecer */
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
 }
 
-.btn-arrow-publication:hover::after {
-    opacity: 1; /* Muestra la imagen azul al pasar el cursor */
+.gallery-info-publication .btn-arrow-publication:hover::after {
+    opacity: 1; 
 }

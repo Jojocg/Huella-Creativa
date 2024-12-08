@@ -1,18 +1,22 @@
 
 .signup {
     position: relative;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: visible;
-    padding: 20px;
+    min-height: 100vh; /* Asegura que ocupe toda la altura del viewport */
+    overflow: hidden;
+
 
 }
 
 /* Mensaje de bienvenida */
-.SayHi h1 {
+.SayHi-signup {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+.SayHi-signup h1 {
     font-size: 4.5rem;
     font-family: 'Fractul', sans-serif;
     font-weight: 700;
@@ -21,11 +25,11 @@
     line-height: 105%;
 }
 
-.SayHi h1 .highlight {
+.SayHi-signup h1 .highlight-signup {
     color: #BAF241;
 }
 
-.SayHi p {
+.SayHi-signup p {
     font-size: 1.2rem;
     font-family: 'Outfit', sans-serif;
     margin-left: 20%;
@@ -37,7 +41,7 @@
 
 
 
-.signup .hero-images {
+.signup .hero-images-signup {
     position: absolute;
     top: 0;
     left: 0;
@@ -54,21 +58,24 @@
 /* Formulario de registro */
 .signup-form {
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
+    align-items: center; /* Alinea horizontalmente los elementos */
+    justify-content: center; /* Alinea verticalmente los elementos */
+    gap: 20px;
+}
+
+.input-wrapper-signup {
+    width: 100%;
+    max-width: 600px;
     align-items: center;
-    gap: 15px;
-    z-index: 2;
+    justify-content: center; 
+
 }
 
-.input-wrapper {
-    width: 100%;
-}
-
-.input-wrapper input {
-    width: 100%;
-    padding: 12px 20px;
+.input-wrapper-signup input {
+    padding: 12px 25px; /* Mantén el padding para consistencia */
     border-radius: 25px;
     border: 2px solid #4037FF;
     outline: none;
@@ -77,16 +84,18 @@
     color: #5A23AD;
     background-color: rgba(255, 255, 250, 0.8);
     transition: all 0.3s ease;
+    margin-bottom: 9%;
 }
 
-.input-wrapper input:focus {
+.input-wrapper-signup input:focus {
     border-color: #BAF241;
     background-color: #FFFFFF;
 }
 
 /* Botón de envío */
-.button_submit {
-    width: 100%;
+.button_submit-signup {
+    width: 100%; /* Igual al ancho del formulario */
+    max-width: 400px; /* Limita el ancho máximo */
     padding: 12px 25px;
     border-radius: 25px;
     border: none;
@@ -96,9 +105,23 @@
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-bottom: 17%;
+
+  
+
 }
 
-.button_submit:hover {
+.signup-form .button_submit-signup a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1em;
+}
+
+
+.button_submit-signup:hover {
     background-color: #0F1020;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -116,6 +139,7 @@
     margin: 20px auto;
     position: relative;
     z-index: 1;
+    margin-bottom: 5%;
 }
 
 .greenCircle .alternativa {
@@ -184,21 +208,37 @@
 /* Texto de inicio de sesión */
 .login-prompt {
     text-align: center;
+    align-items: center;
     color: #4037FF;
-    font-size: 1rem;
-    margin-top: 20px;
-}
-
-.login-prompt .button_login {
-    background: none;
-    border: none;
-    color: #4037FF;
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.login-prompt .button_login a {
-    color: inherit;
+    font-size: 1.7em;
     text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 4%;
+    margin-top: 5%;
 }
+
+.login-prompt .button_login-signup {
+    width: 100%;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    background-color: #4037FF;
+    color: #FFFFFF;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 100;
+}
+
+.login-prompt .button_login-signup a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1em;
+}
+
+.login-prompt .button_login-signup:hover {
+    background-color: #0F1020;
+    transform: translateY(-2px);
+    }

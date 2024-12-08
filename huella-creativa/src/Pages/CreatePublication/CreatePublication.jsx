@@ -256,7 +256,7 @@ function CreatePublication() {
                         </div>
                     ))}
 
-                    <button type="button" onClick={handleAddMaterial}>
+                    <button className="buttonCreateMaterial" type="button" onClick={handleAddMaterial}>
                         Añadir Material
                     </button>
              

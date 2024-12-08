@@ -47,7 +47,7 @@ const HomeLogin = () => {
         </Link>
       </div>
     </div>
-    <img src="/Creaciones/creaciones-16.png" alt="Ilustración" />
+    <img src="/ilustracion.png" alt="Ilustración" />
   </div>
 
   <div className="category-box">
@@ -62,7 +62,7 @@ const HomeLogin = () => {
         </Link>
       </div>
     </div>
-    <img src="/Creaciones/creaciones-16.png" alt="Ilustración" />
+    <img src="/diseniografic.png" alt="Diseño Grafico" />
   </div>
 
   <div className="category-box">
@@ -77,7 +77,7 @@ const HomeLogin = () => {
         </Link>
       </div>
     </div>
-    <img src="/Creaciones/creaciones-16.png" alt="Ilustración" />
+    <img src="/escultura.png" alt="Escultura" />
   </div>
 
   <div className="category-box">
@@ -92,7 +92,7 @@ const HomeLogin = () => {
         </Link>
       </div>
     </div>
-    <img src="/Creaciones/creaciones-16.png" alt="Ilustración" />
+    <img src="/3dModel.png" alt="Modelado 3D" />
   </div>
 
   <div className="category-box">
@@ -107,7 +107,7 @@ const HomeLogin = () => {
         </Link>
       </div>
     </div>
-    <img src="/Creaciones/creaciones-16.png" alt="Ilustración" />
+    <img src="/animation.png" alt="Animación" />
   </div>
 
 </div>

@@ -142,30 +142,30 @@ const Publications = () => {
                         />
                     </div>
                     <div className="gallery-info-publication">
-                        <div className="profile">
+                        <div className="profile-publication">
                             <img
                                 src="/avatarDefault.png"
                                 alt="Avatar"
                                 className="avatar"
                             />
-                            <span className="name">
-                                <span className="name">
+                            <span className="name-publication">
+                                <span className="name-publication">
                                     {publication?.publico?.nombre_usuario || publication?.publico?.privado?.nombre || "Nombre no disponible"}
                                 </span>
                             </span>
                         </div>
-                        <p className="description">{publication.titulo || "Sin título"}</p>
-                        <p className="date">Fecha: {formattedDate}</p>
-                        <div className="stats">
+                        <p className="description-publication">{publication.titulo || "Sin título"}</p>
+                        <p className="date-publication">Fecha: {formattedDate}</p>
+                        <div className="stats-publication">
                         <button
-                            className="btn-arrow-publication"
-                            onClick={() => openModal(publication)}
-                        >
-                            <img 
-                                src="/flechas-20.svg"
-                                alt="Flecha verde"
-                            />
-                        </button>
+    className="btn-arrow-publication"
+    onClick={() => openModal(publication)}
+>
+    <img 
+        src="/flechas20.svg" 
+        alt="Flecha verde"
+    />
+</button>
                     </div>
                 </div>
             </div>
@@ -180,18 +180,18 @@ const Publications = () => {
             <header className="publications-header">
                 <div>
                     {/* Render dinámico de encabezado */}
-                    <h1 className="section-subtitle">{category}</h1>
-                    <h2>{method}</h2>
-                    <p className="section-description">
+                    <h1 className="section-subtitle--publication">{category}</h1>
+                    <h2 className="section-title--publication">{method}</h2>
+                    <p className="section-description-publication">
                         {getDescription(category, method)}
                     </p>
                 </div>
                 <Link to={`/publications/${metodoId}/create`}>
-                    <button>Crear publicación</button>
+                    <button className="createBtn">Crear publicación</button>
                 </Link>
-                <div className="sort-container">
+                <div className="sort-container-publication">
                     <select
-                        className="sort-dropdown"
+                        className="sort-dropdown-publication"
                         value={sortOption}
                         onChange={handleSort}
                     >
@@ -212,23 +212,23 @@ const Publications = () => {
         <h1 className="advertisement-title">¡Hola, <span className="highlightAds"> {user.nombre || "Usuario"}!</span></h1>
         <p className="advertisement-description">Descubre las ofertas de tus marcas favoritas</p>
     </div>
-                <div className="ad-card">
-                    <img src="/ads/adobe-illustrator.png" alt="Adobe Illustrator" />
+                <div className="ad-card" data-badge="Estudiantes." >
+                    <img src="/publi2.png" alt="Adobe Illustrator" />
                     <p>
                         <strong>Adobe Illustrator</strong>
                         <br /> Herramienta esencial para crear ilustraciones vectoriales
                         escalables.
                     </p>
                 </div>
-                <div className="ad-card">
-                    <img src="/ads/figma-beta.png" alt="Figma Beta" />
+                <div className="ad-card" data-badge="20% dto.">
+                    <img src="/publi3.png" alt="Figma Beta" />
                     <p>
                         <strong>Figma</strong>
                         <br /> Descubre la nueva herramienta para desarrolladores de Figma.
                     </p>
                 </div>
-                <div className="ad-card">
-                    <img src="/ads/wacom-tablet.png" alt="Tablet Wacom" />
+                <div className="ad-card" data-badge="Novedad">
+                    <img src="/publi1.png" alt="Tablet Wacom" />
                     <p>
                         <strong>Tablet Wacom</strong>
                         <br /> Precisión y sensibilidad al trazo para artistas digitales.

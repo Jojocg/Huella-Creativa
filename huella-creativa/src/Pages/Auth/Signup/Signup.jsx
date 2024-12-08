@@ -52,7 +52,7 @@ function Signup() {
     return (
         <section className="signup">
              {/* Contenedor de imágenes de fondo */}
-             <div className="hero-images">
+             <div className="hero-images-signup">
                     <img
                         className="fondo-web-izq"
                         src="/fondo_izq.png"
@@ -65,10 +65,10 @@ function Signup() {
                     />
                 </div>
             {/* Mensaje de bienvenida */}
-            <div className="SayHi">
+            <div className="SayHi-signup">
                 {/* Contenido del Hero */}
                 <h1>
-                    ¡Tu viaje creativo <br /> <span className="highlight">comienza aquí!</span>
+                    ¡Tu viaje creativo <br /> <span className="highlight-signup">comienza aquí!</span>
                 </h1>
                 <p>
                     Conecta con artistas, domina nuevas herramientas y transforma tu
@@ -80,48 +80,48 @@ function Signup() {
             {/* Formulario de registro */}
             <div className="signup-form">
                 <form onSubmit={handleSignup}>
-                    <div className="input-wrapper">
+                    <div className="input-wrapper-signup">
                         <input
                             type="text"
                             name="nombre"
-                            placeholder="NOMBRE Y APELLIDOS*"
+                            placeholder="Nombre y apellidos*"
                             value={formData.nombre}
                             onChange={handleChangeFormData}
                             required
                         />
                     </div>
-                    <div className="input-wrapper">
+                    <div className="input-wrapper-signup">
                         <input
                             type="email"
                             name="email"
-                            placeholder="EMAIL*"
+                            placeholder="email*"
                             value={formData.email}
                             onChange={handleChangeFormData}
                             required
                         />
                     </div>
-                    <div className="input-wrapper">
+                    <div className="input-wrapper-signup">
                         <input
                             type="password"
                             name="password"
-                            placeholder="CONTRASEÑA*"
+                            placeholder="contraseña*"
                             value={formData.password}
                             onChange={handleChangeFormData}
                             required
                         />
                     </div>
-                    <div className="input-wrapper">
+                    <div className="input-wrapper-signup">
                         <input
                             type="password"
                             name="confirmPassword"
-                            placeholder="CONFIRMAR CONTRASEÑA*"
+                            placeholder="confirmar contraseña*"
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             required
                         />
                     </div>
-                    {error && <p className="error-message">{error}</p>}
-                    <button type="submit" className="button_submit">
+                    {error && <p className="error-message-signup">{error}</p>}
+                    <button type="submit" className="button_submit-signup">
                         Enviar
                     </button>
                 </form>
@@ -154,9 +154,9 @@ function Signup() {
             {/* Texto de inicio de sesión */}
             <div className="login-prompt">
                 <p>
-                    ¿No tienes cuenta?
+                    ¿Ya tienes cuenta?
                 </p>
-                    <button type="button" className="button_login">
+                    <button type="button" className="button_login-signup">
                         <Link to="/auth/login">
                         Inicia sesión
                         </Link>

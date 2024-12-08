@@ -65,7 +65,7 @@ const Home = () => {
                                     <span>{item.likes}</span>
                                 </div>
                                 <a href="/NotFound" target="_blank" rel="noopener noreferrer" className="btn-arrow">
-                                    <img src="/flechas-20.svg" alt="Flecha verde" />
+                                    <img src="/flechas20.svg" alt="Flecha verde" />
                                 </a>
                             </div>
                         </div>

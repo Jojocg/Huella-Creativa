@@ -34,7 +34,7 @@
 
 /* ETIQUETAS */
 .labelCreate {
-    font-size: 1.1rem;
+    font-size: 1.1rem;  
     font-weight: bold;
     color: #4037FF;
     margin-bottom: 5px;
@@ -53,6 +53,22 @@
     background-color: rgba(255, 255, 250, 0.8);
     color: #5A23AD;
     transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+
+.textareaCreate{
+    width: 40vw;
+    min-width: 40vw;
+    max-width: 40vw;
+    padding: 12px 25px;
+
+    border-radius: 25px;
+    border: 2px solid #4037FF;
+    outline: none;
+    font-size: 1rem;
+    font-family: "Outfit", sans-serif;
+    color: #5A23AD;
+    background-color: rgba(255, 255, 250, 0.8);
 }
 
 .required{
@@ -97,7 +113,7 @@ button {
 button[type="submit"] {
     background-color: #4037FF;
     color: #FFFFFF;
-    font-weight: bold;
+
     align-self: center; /* Centra el botón */
 }
 
@@ -108,7 +124,7 @@ button[type="submit"]:hover {
 }
 
 /* Botón Secundario (Añadir Material) */
-button[type="button"] {
+.buttonCreateMaterial {
     background-color: #BAF241;
     color: #4037FF;
     font-weight: bold;

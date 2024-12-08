@@ -5,12 +5,13 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    background-color: rgba(0, 0, 0, 0.7); 
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: flex-start; /* Alinea el modal en la parte superior */
-    z-index: 999; /* Asegura que esté encima de todo */
-    padding-top: 20px; /* Espaciado en la parte superior */
+    justify-content: center; 
+    align-items: flex-start;
+    z-index: 999; 
+    padding-top: 20px; 
+    text-align: center;
 }
 
 
@@ -117,34 +118,37 @@
 /* Modal Image */
 .modal-content img {
     display: block;
-    max-width: 100%; /* Asegura que no exceda el ancho del modal */
-    max-height: 400px; /* Limita la altura de la imagen */
+    max-width: 100%; 
+    max-height: 400px; 
     border-radius: 10px;
-    margin: 0 auto; /* Centra la imagen */
-    object-fit: cover; /* Ajusta la imagen al contenedor */
+    margin: 0 auto; 
+    object-fit: cover; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Button */
-.modal-content button {
+.modal-content .closeModal {
     position: absolute; /* Se mantiene visible durante el scroll */
     top: 10px; /* Fija el botón a 10px desde la parte superior del modal */
     right: 10px; /* Margen derecho dentro del modal */
     background-color: #4037FF;
     color: #FFFFFF;
     border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
+    border-radius: 50%; /* Asegura que sea completamente redondo */
+    width: 50px; /* Tamaño consistente */
+    height: 50px; /* Tamaño consistente */
+    font-size: 1.2rem; /* Ajusta el tamaño del texto */
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1000; /* Asegura que el botón esté siempre encima del contenido */
     transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex; /* Asegura que el contenido esté centrado */
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: center; 
 }
 
-.modal-content button:hover {
+.modal-content .closeModal:hover {
     background-color: #BAF241;
     transform: scale(1.1);
 }
@@ -155,9 +159,9 @@
     display: block;
     max-width: 100%;
     max-height: 400px;
-    margin: 2% auto; /* Centrar horizontalmente */
+    margin: 2% auto; 
     border-radius: 10px;
-    object-fit: cover; /* Ajusta la imagen al contenedor */
+    object-fit: cover; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -178,25 +182,31 @@
 .statsModal .likesModal {
     display: flex;
     align-items: center;
-    cursor: pointer; /* Indica que se puede hacer clic */
-    gap: 10px; /* Espacio entre el ícono y el texto */
+    cursor: pointer; 
+    gap: 10px; 
 }
 
 .statsModal .likesModal .iconModal {
-    width: 25px; /* Asegura un tamaño suficiente para el SVG */
+    width: 25px; 
     height: 25px;
-    display: block; /* Evita comportamiento inesperado de inline-block */
-    margin: 0; /* Remueve cualquier margen o espacio externo */
-    padding: 0; /* Elimina relleno innecesario */
-    box-sizing: content-box; /* Animación de clic */
+    display: block; 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: content-box; 
 }
 
 .statsModal .likesModal .iconModal:hover {
-    transform: scale(1.2); /* Aumenta ligeramente el tamaño al pasar el cursor */
+    transform: scale(1.2); 
 }
 
 .statsModal .likesModal span {
     font-size: 1rem;
     color: #343434;
     font-weight: 500;
+}
+
+
+.pModal{
+    margin: 5%;
+    text-align: left;
 }

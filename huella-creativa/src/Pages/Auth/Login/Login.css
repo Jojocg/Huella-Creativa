@@ -1,9 +1,9 @@
 /* General Styles */
 body {
-    font-family: "Fractul", sans-serif;
+
     margin: 0;
     padding: 0;
-    color: #0F1020;
+
 
 }
 
@@ -11,12 +11,13 @@ body {
 /* Sección de Login */
 .login {
     position: relative;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 100vh; /* Asegura que ocupe toda la altura del viewport */
     overflow: hidden;
+ /* Añade un pequeño padding para evitar bordes pegados */
 }
 
 /* Fondo */
@@ -32,6 +33,11 @@ body {
 }
 
 /* Mensaje de bienvenida */
+.SayHi{
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
 .SayHi h1 {
     font-size: 3.5rem;
     font-family: "Fractul", sans-serif;
@@ -41,29 +47,35 @@ body {
     margin-bottom: 20px;
 }
 
-.SayHi h1 .highlight {
+.SayHi h1 .highlightLogin {
     color: #4037FF;
 }
 
 /* Formulario de inicio de sesión */
+
+
+
+
+
 .login-form {
     width: 100%;
-    max-width: 800px; /* Limita el ancho máximo */
+    max-width: 600px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Alinea los hijos al centro */
-    justify-content: center; /* Centra verticalmente los hijos */
-    gap: 15px;
-    z-index: 2;
+    align-items: center; /* Alinea horizontalmente los elementos */
+    justify-content: center; /* Alinea verticalmente los elementos */
+    gap: 20px; /* Espaciado uniforme entre elementos */
 }
 
-.input-wrapper {
+.input-wrapper-login {
     width: 100%;
-    max-width: 400px; /* Igual al máximo del formulario */
+    max-width: 600px;
+    align-items: center;
+    justify-content: center; /* Igual al máximo del formulario */
 }
 
-.input-wrapper input {
-    width: 100%; /* Ajusta al ancho del contenedor */
+.input-wrapper-login input {
+
     padding: 12px 25px; /* Mantén el padding para consistencia */
     border-radius: 25px;
     border: 2px solid #4037FF;
@@ -73,6 +85,8 @@ body {
     color: #5A23AD;
     background-color: rgba(255, 255, 250, 0.8);
     transition: all 0.3s ease;
+    margin-bottom: 5%;
+
 }
 
 
@@ -96,6 +110,7 @@ body {
     transition: all 0.3s ease;
     text-align: center;
     text-decoration: none;
+    font-weight: 100;
 }
 
 
@@ -105,11 +120,14 @@ body {
 background-color: #0F1020;
 transform: translateY(-2px);
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+font-weight: 100;
 }
 
 .button_login a {
 color: #FFFFFF;
 text-decoration: none;
+font-weight: 100;
+font-size: 1.2em;
 }
 
 /* Círculo verde como separador */
@@ -121,7 +139,7 @@ background-color: #BAF241;
 display: flex;
 align-items: center;
 justify-content: center;
-margin: 20px auto;
+margin: 30px auto;
 position: relative;
 z-index: 1;
 }
@@ -138,6 +156,7 @@ font-weight: bold;
 width: 100%;
 display: flex;
 justify-content: center;
+margin: 20px 0;
 }
 
 .button_google {
@@ -176,7 +195,7 @@ gap: 10px;
 margin: 20px 0;
 }
 
-.pagination-dots .dot {
+.pagination-dots-login .dot {
 width: 10px;
 height: 10px;
 background-color: #ffffff;
@@ -216,11 +235,14 @@ font-size: 1rem;
 cursor: pointer;
 transition: all 0.3s ease;
 text-align: center;
+font-weight: 100;
 }
 
 .button_register a {
 color: #FFFFFF;
 text-decoration: none;
+font-weight: 100;
+font-size: 1.2em;
 }
 
 .button_register:hover {
