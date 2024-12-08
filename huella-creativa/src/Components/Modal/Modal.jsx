@@ -32,7 +32,7 @@ const Modal = ({ publication, closeModal }) => {
                 <p>Tutorial: <a href={publication.link}>{publication.link}</a></p>
                 <p>{formattedDate}</p>
                 {publication.imagen && <img src={publication.imagen} alt={publication.titulo} />}
-                <h4>Materiales</h4>
+                <h4>Materiales: </h4>
                 {publication.materiales && publication.materiales.length > 0 ? (
                     <ul>
                         {publication.materiales.map((material, index) => (

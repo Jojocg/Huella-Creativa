@@ -46,16 +46,17 @@ const router = createBrowserRouter([
             {
                 path: "/homeLogin",
                 element: <HomeLogin />,
+                loader: checkAuthLoader,
             },
             {
-                path: "/profile",
+                path: "/profile/:publicoId",
                 element: <UserProfile />,
                 loader: checkAuthLoader, // Para restringir acceso si no está autenticado
             },
             {
                 path: "/publications/:metodoId",
                 element: <Publications />,
-                            loader: checkAuthLoader, //se puede comentar esta línea cuando queramos probar sin meter el usuario
+                loader: checkAuthLoader, //se puede comentar esta línea cuando queramos probar sin meter el usuario
             },
             {
                 path: "/publications/:metodoId/create",

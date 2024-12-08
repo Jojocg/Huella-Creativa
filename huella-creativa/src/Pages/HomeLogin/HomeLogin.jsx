@@ -39,7 +39,7 @@ const HomeLogin = () => {
     <div className="content-container">
       <span className="category-title">Ilustración</span>
       <div className="options">
-        <Link to={`/publications/1`} state={{ category: "ilustración", method: "tradicional" }}>
+        <Link to={`/publications/1`} state={{ category: "Ilustración", method: "Tradicional" }}>
           <button className="btn-traditional">Tradicional</button>
         </Link>
         <Link to={`/publications/6`} state={{ category: "ilustración", method: "digital" }}>

@@ -74,8 +74,8 @@ const Publications = () => {
 
     const getDescription = (category, method) => {
         const descriptions = {
-            ilustración: {
-                tradicional: "Explora técnicas de lápiz y papel para plasmar ideas con detalle y creatividad.",
+            Ilustración: {
+                Tradicional: "Explora técnicas de lápiz y papel para plasmar ideas con detalle y creatividad.",
                 digital: "Descubre el poder del trazo. Aprende técnicas digitales y explora herramientas esenciales para convertir tus ideas en dibujos que cuenten historias únicas."
             },
             "diseño gráfico": {

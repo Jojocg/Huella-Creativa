@@ -1,9 +1,13 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { UserContext } from "../../Context/user";
+import { getOnePublicProfile } from "../../Services/UserPublicProfile";
 import "./UserProfile.css";
 
 const UserProfile = () => {
     const { user } = useContext(UserContext);
+    const { publicoId } = useParams();
+    const [profile, setProfile] = useState();
     const [avatar, setAvatar] = useState("/avatarDefault.png"); // Ruta del avatar predeterminado
     const [previewImage, setPreviewImage] = useState(avatar); // Preview de la imagen seleccionada
     const [activeSection, setActiveSection] = useState("Información básica"); // Estado para el menú flotante
@@ -23,6 +27,18 @@ const UserProfile = () => {
         setActiveSection(section);
         document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
     };
+
+    useEffect(() => {
+        console.log("metodoId recibido:", publicoId);
+        const getPublicProfile = async () => {
+
+            const response = await getOnePublicProfile(publicoId) // the response is all the publications that coincide with the metodoId
+            console.log(response.data) //Revisar esta linea
+            setProfile(response.data)
+
+        }
+        getPublicProfile()
+    }, [publicoId])
 
     return (
         <section className="user-profile">
@@ -62,7 +78,7 @@ const UserProfile = () => {
                     <section id="BasicInfo-profile">
                         <div className="userName-profile">
                             <h1 className="titleProfile">
-                                ¡Hola, <span className="highlight-profile">{user || "Usuario"}!</span>
+                                ¡Hola, <span className="highlight-profile">{user?.nombre || "Usuario"}!</span>
                             </h1>
                             <p>Aquí podrás ver y editar tus datos personales.</p>
                         </div>

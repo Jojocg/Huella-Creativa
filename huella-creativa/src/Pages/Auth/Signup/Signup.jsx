@@ -37,8 +37,8 @@ function Signup() {
                     response;
                     localStorage.setItem("token", response.data.token);
 
-                    setUser(formData.nombre);
-                    navigate("/profile");
+                    setUser({ nombre: formData.nombre, publicoId: response.data.publicoId });
+                    navigate("/profile/:publicoId");
 
                 }
             } else {
