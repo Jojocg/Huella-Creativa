@@ -32,7 +32,7 @@ const Header = () => {
                         onMouseEnter={() => setActiveMenu("tradicional")}
                         onMouseLeave={() => setActiveMenu(null)}
                     >
-                        <span className="category-title">Tradicional</span>
+                        <span className="category-nav">Tradicional</span>
                         {activeMenu === "tradicional" && (
                             <ul className="dropdown">
                                 <li><Link to="/publications/1" state={{ category: "ilustración", method: "tradicional" }}>Ilustración</Link></li>
@@ -49,7 +49,7 @@ const Header = () => {
                         onMouseEnter={() => setActiveMenu("digital")}
                         onMouseLeave={() => setActiveMenu(null)}
                     >
-                        <span className="category-title">Digital</span>
+                        <span className="category-nav">Digital</span>
                         {activeMenu === "digital" && (
                             <ul className="dropdown">
                                 <li><Link to="/publications/6" state={{ category: "ilustración", method: "digital" }}>Ilustración</Link></li>

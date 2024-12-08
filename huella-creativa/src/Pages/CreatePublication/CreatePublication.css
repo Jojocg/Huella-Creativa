@@ -11,18 +11,27 @@
     overflow-x: hidden;
 }
 
+/* TÍTULO PRINCIPAL */
+.createTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4037FF;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
 /* FORMULARIO PRINCIPAL */
 .formCreate {
     margin: 0 auto;
-    max-width: 50vw; 
+    max-width: 50vw;
     display: flex;
     flex-direction: column;
     gap: 20px;
     background: #FFFFFF;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%; 
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 /* SECCIÓN DEL FORMULARIO */
@@ -34,61 +43,28 @@
 
 /* ETIQUETAS */
 .labelCreate {
-    font-size: 1.1rem;  
-    font-weight: bold;
-    color: #4037FF;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0F1020;
     margin-bottom: 5px;
+    margin-top: 10px; /* Espaciado entre los campos */
 }
 
 /* INPUTS Y TEXTAREA */
 .inputCreate,
 .textareaCreate,
 .selectCreate {
-    width: 90%;
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: 2px solid #4037FF;
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #E5E5E5;
     font-size: 1rem;
     font-family: 'Outfit', sans-serif;
-    background-color: rgba(255, 255, 250, 0.8);
-    color: #5A23AD;
+    background-color: rgba(240, 240, 255, 0.6);
+    color: #4037FF;
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-
-.textareaCreate{
-    width: 40vw;
-    min-width: 40vw;
-    max-width: 40vw;
-    padding: 12px 25px;
-
-    border-radius: 25px;
-    border: 2px solid #4037FF;
-    outline: none;
-    font-size: 1rem;
-    font-family: "Outfit", sans-serif;
-    color: #5A23AD;
-    background-color: rgba(255, 255, 250, 0.8);
-}
-
-.required{
-    color: red;
-}
-
-/* Textarea */
-.textareaCreate {
-    min-height: 150px;
-    resize: vertical;
-}
-
-/* Select */
-.selectCreate {
-    appearance: none; /* Remueve estilo por defecto */
-    cursor: pointer;
-    background: rgba(255, 255, 250, 0.8);
-}
-
-/* FOCUS */
 .inputCreate:focus,
 .textareaCreate:focus,
 .selectCreate:focus {
@@ -97,24 +73,35 @@
     outline: none;
 }
 
+/* Textarea */
+.textareaCreate {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Select */
+.selectCreate {
+    appearance: none;
+    cursor: pointer;
+}
+
 /* BOTONES */
 button {
-    padding: 12px 25px;
-    border-radius: 25px;
+    padding: 12px 20px;
+    border-radius: 20px;
     border: none;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
-    text-decoration: none;
 }
 
 /* Botón Principal (Crear) */
 button[type="submit"] {
     background-color: #4037FF;
     color: #FFFFFF;
-
-    align-self: center; /* Centra el botón */
+    align-self: center;
+    font-weight: bold;
 }
 
 button[type="submit"]:hover {
@@ -123,33 +110,40 @@ button[type="submit"]:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Botón Secundario (Añadir Material) */
-.buttonCreateMaterial {
-    background-color: #BAF241;
-    color: #4037FF;
-    font-weight: bold;
-    align-self: center; /* Centra el botón */
+/* SECCIÓN DE MATERIALES */
+.materialsSection {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #F0F8FF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-button[type="button"]:hover {
-    background-color: #A2D638;
-    transform: translateY(-2px);
+/* TÍTULO DE LA SECCIÓN DE MATERIALES */
+.materialsSection h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #BA23AD;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 /* TARJETAS DE MATERIALES */
 .material-form {
-    padding: 15px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 15px;
+    padding: 15px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* INPUTS DENTRO DE TARJETAS */
 .material-form input {
     width: 100%;
-    padding: 10px;
-    border-radius: 15px;
+    padding: 12px 15px;
+    border-radius: 10px;
     border: 1px solid #DDD;
     font-size: 1rem;
     background-color: rgba(255, 255, 255, 0.9);
@@ -157,7 +151,6 @@ button[type="button"]:hover {
     transition: border-color 0.3s ease;
 }
 
-/* FOCUS EN INPUTS DE MATERIALES */
 .material-form input:focus {
     border-color: #4037FF;
     outline: none;
@@ -169,15 +162,34 @@ button[type="button"]:hover {
     color: #FFFFFF;
     font-size: 0.9rem;
     padding: 8px 15px;
-    border-radius: 15px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    align-self: flex-start; /* Alineado al inicio */
+    align-self: flex-end;
 }
 
 .material-form button:hover {
     background-color: #FF4949;
+}
+
+/* BOTÓN AÑADIR MATERIAL */
+.add-material-button {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 20px;
+    background-color: #BAF241;
+    color: #4037FF;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: center;
+}
+
+.add-material-button:hover {
+    background-color: #A2D638;
+    transform: translateY(-2px);
 }
 
 /* MENSAJES DE ERROR */
@@ -185,35 +197,6 @@ button[type="button"]:hover {
     color: red;
     font-size: 0.9rem;
     text-align: center;
-    margin-top: -10px;
-}
-
-/* TÍTULO */
-.createTitle {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #0F1020;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-/* BOTÓN DE AÑADIR MATERIAL */
-.add-material-button {
-    display: inline-block;
-    padding: 12px 20px;
-    border-radius: 25px;
-    background-color: #BAF241;
-    color: #4037FF;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    align-self: center; /* Centrado */
-}
-
-.add-material-button:hover {
-    background-color: #A2D638;
-    transform: translateY(-2px);
 }
 
 /* AJUSTES RESPONSIVOS */
@@ -244,7 +227,7 @@ button[type="button"]:hover {
     }
 
     button {
-        padding: 10px 20px;
+        padding: 10px 15px;
         font-size: 0.8rem;
     }
 }

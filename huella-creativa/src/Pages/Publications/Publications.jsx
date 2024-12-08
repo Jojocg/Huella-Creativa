@@ -210,9 +210,9 @@ const Publications = () => {
             <section className="advertisement-section">
             <div className="advertisement-header">
         <h1 className="advertisement-title">¡Hola, <span className="highlightAds"> {user.nombre || "Usuario"}!</span></h1>
-        <p className="advertisement-description">Descubre las ofertas de tus marcas favoritas</p>
+        <p className="advertisement-description">Descubre las ofertas de tus marcas favoritas y todos los descuentos por ser parte de nuestra comunidad.</p>
     </div>
-                <div className="ad-card" data-badge="Estudiantes." >
+                <div className="ad-card" data-badge="Estudiantes" >
                     <img src="/publi2.png" alt="Adobe Illustrator" />
                     <p>
                         <strong>Adobe Illustrator</strong>
