@@ -61,8 +61,8 @@
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Alinea horizontalmente los elementos */
-    justify-content: center; /* Alinea verticalmente los elementos */
+    align-items: center; 
+    justify-content: center; 
     gap: 20px;
 }
 
@@ -75,7 +75,7 @@
 }
 
 .input-wrapper-signup input {
-    padding: 12px 25px; /* Mantén el padding para consistencia */
+    padding: 12px 25px; 
     border-radius: 25px;
     border: 2px solid #4037FF;
     outline: none;
@@ -94,8 +94,8 @@
 
 /* Botón de envío */
 .button_submit-signup {
-    width: 100%; /* Igual al ancho del formulario */
-    max-width: 400px; /* Limita el ancho máximo */
+    width: 100%; 
+    max-width: 400px;
     padding: 12px 25px;
     border-radius: 25px;
     border: none;

@@ -66,7 +66,7 @@
 }
 
 .category-box {
-    width: calc(20% - 20px); /* Asegura que haya 5 tarjetas uniformes con espacio */
+    width: calc(20% - 20px); 
     height: 15rem; 
     background-color: #E0E0E0;
     border-radius: 20px;

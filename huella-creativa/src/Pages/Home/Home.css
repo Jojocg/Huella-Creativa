@@ -207,7 +207,7 @@ button {
     position: relative;
     width: 40px;
     height: 40px;
-    margin-left: auto; /* Alinea el botón de flecha hacia la derecha */
+    margin-left: auto; 
   }
   
   .btn-arrow img {
@@ -255,7 +255,7 @@ button {
   }
   
   .separator img {
-    width: 5%; /* Ajusta el tamaño según necesites */
+    width: 5%; 
   }
   
   /* Call to Action */

@@ -62,21 +62,21 @@ body {
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Alinea horizontalmente los elementos */
-    justify-content: center; /* Alinea verticalmente los elementos */
-    gap: 20px; /* Espaciado uniforme entre elementos */
+    align-items: center; 
+    justify-content: center; 
+    gap: 20px; 
 }
 
 .input-wrapper-login {
     width: 100%;
     max-width: 600px;
     align-items: center;
-    justify-content: center; /* Igual al máximo del formulario */
+    justify-content: center; 
 }
 
 .input-wrapper-login input {
 
-    padding: 12px 25px; /* Mantén el padding para consistencia */
+    padding: 12px 25px; 
     border-radius: 25px;
     border: 2px solid #4037FF;
     outline: none;
@@ -98,8 +98,8 @@ body {
 
 /* Botón de envío */
 .login-form form .button_login {
-    width: 100%; /* Igual al ancho del formulario */
-    max-width: 400px; /* Limita el ancho máximo */
+    width: 100%; 
+    max-width: 400px; 
     padding: 12px 25px;
     border-radius: 25px;
     border: none;

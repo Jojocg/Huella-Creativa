@@ -27,9 +27,9 @@
 
 .button-confirm {
     width: 100%;
-    /* Igual al ancho del formulario */
+  
     max-width: 200px;
-    /* Limita el ancho máximo */
+
     padding: 12px 25px;
     border-radius: 25px;
     border: none;
@@ -50,9 +50,7 @@
 
 .button-cancel {
     width: 100%;
-    /* Igual al ancho del formulario */
     max-width: 200px;
-    /* Limita el ancho máximo */
     padding: 12px 25px;
     border-radius: 25px;
     font-size: 1rem;

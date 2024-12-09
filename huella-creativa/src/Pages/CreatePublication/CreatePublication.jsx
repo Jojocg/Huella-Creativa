@@ -56,7 +56,7 @@ function CreatePublication() {
             ]
         }));
     };
-  
+
 
     const handleRemoveMaterial = (index) => {
         if (index === 0) {
@@ -107,19 +107,19 @@ function CreatePublication() {
 
     const confirmSubmitPublication = async () => {
         try {
-            console.log("Datos enviados al servicio:",publicationData, user.publicoId);
+            console.log("Datos enviados al servicio:", publicationData, user.publicoId);
             await createUserPublication(user.publicoId, publicationData, metodoId);
             console.log("Publicación creada:", publicationData);
-    
+
             // Redirige a la categoría y método seleccionados por el usuario
             navigate(`/publications/${metodoId}`,
                 {
-                state: {
-                    category: publicationData.categoria_artistica,
-                    method: publicationData.metodo,
-                },
-            }
-        );
+                    state: {
+                        category: publicationData.categoria_artistica,
+                        method: publicationData.metodo,
+                    },
+                }
+            );
             setIsSubmitModalOpen(false); // Cierra el modal después del envío
         } catch (error) {
             console.error("Error creando publicación:", error.message);
@@ -134,135 +134,141 @@ function CreatePublication() {
 
 
     return (
-    <div className="createPublicationPage">
+        <div className="createPublicationPage">
             <form onSubmit={handleSubmitModalOpen} className="formCreate">
                 <section className="sectionCreate">
                     <label className="labelCreate">
-                        Imagen:
+                        Imagen
                         <input
                             type="text"
                             name="imagen"
                             className="inputCreate"
                             onChange={handleChangePublicationData}
-                        />
-                    </label>
+                            />
+                            </label>
+                    <section className="sectionCreate">
+    <label className="labelCreate">
+        Título <span className="required">*</span>
+    <input
+        type="text"
+        name="titulo"
+        className="inputCreate"
+        onChange={handleChangePublicationData}
+        required
+        />
+        </label>
+</section>
+
                     <label className="labelCreate">
-                        Título <span className="required">*</span>:
-                        <input
-                            type="text"
-                            name="titulo"
-                            className="inputCreate"
-                            onChange={handleChangePublicationData}
-                            required
-                        />
-                    </label>
-                    <label className="labelCreate">
-                        Contenido <span className="required">*</span>:
+                        Contenido <span className="required">*</span>
                         <textarea
                             name="contenido"
                             className="textareaCreate"
                             onChange={handleChangePublicationData}
                             required
+                            />
+                            </label>
+                    <label className="labelCreate">
+                        Enlace
+                    <input
+                        type="text"
+                        name="link"
+                        className="inputCreate"
+                        onChange={handleChangePublicationData}
                         />
-                    </label>
-                    <label className="labelCreate">
-                        Enlace:
-                        <input
-                            type="text"
-                            name="link"
-                            className="inputCreate"
-                            onChange={handleChangePublicationData}
-                        />
-                    </label>
-                    <label className="labelCreate">
-                        Método <span className="required">*</span>:
-                        <select
-                            name="metodo"
-                            className="selectCreate"
-                            onChange={handleChangePublicationData}
-                            value={publicationData.metodo}
-                            required
-                        >
-                            <option value="">Selecciona Método:</option>
-                            <option value="tradicional">Tradicional</option>
-                            <option value="digital">Digital</option>
-                        </select>
-                    </label>
-                    <label className="labelCreate">
-                        Categoría artística <span>*</span>:
-                        <select
-                            name="categoria_artistica"
-                            className="selectCreate"
-                            onChange={handleChangePublicationData}
-                            value={publicationData.categoria_artistica}
-                            required
-                        >
-                            <option value="">Selecciona Categoría:</option>
-                            <option value="ilustración">Ilustración</option>
-                            <option value="diseño gráfico">Diseño gráfico</option>
-                            <option value="escultura">Escultura</option>
-                            <option value="modelado 3D">Modelado 3D</option>
-                            <option value="animación">Animación</option>
-                        </select>
-                    </label>
-                </section>
-                    {publicationData.materiales.map((material, index) => (
-                        <div key={index} className="material-form">
-                            <label>
-                                Nombre del material <span className="required">*</span>:
-                                <input
-                                    type="text"
-                                    name="nombre"
-                                    value={material.nombre}
-                                    onChange={(e) => handleChangeMaterialData(index, e)}
-                                    required
-                                />
-                            </label>
-                            <label>
-                                Descripción <span className="required">*</span>:
-                                <input
-                                    type="text"
-                                    name="descripcion"
-                                    value={material.descripcion}
-                                    onChange={(e) => handleChangeMaterialData(index, e)}
-                                    required
-                                />
-                            </label>
-                            <label>
-                                Marca <span className="required">*</span>:
-                                <input
-                                    type="text"
-                                    name="marca"
-                                    value={material.marca}
-                                    onChange={(e) => handleChangeMaterialData(index, e)}
-                                    required
-                                />
-                            </label>
-                            <label>
-                                Tutorial:
-                                <input
-                                    type="text"
-                                    name="tutorial"
-                                    value={material.tutorial}
-                                    onChange={(e) => handleChangeMaterialData(index, e)}
-                                />
-                            </label>
-                            {/* Remove button for all but the first material */}
-                            {index !== 0 && (
-                                <button type="button" onClick={() => handleRemoveMaterial(index)}>
-                                    Borrar Material
-                                </button>
-                            )}
-                        </div>
-                    ))}
+                        </label>
 
-                    <button className="buttonCreateMaterial" type="button" onClick={handleAddMaterial}>
-                        Añadir Material
-                    </button>
-             
+                    <div className="selectCreateGroup">
+                        <label className="labelCreate">
+                            Método <span className="required">*</span>
+                            <select
+                                name="metodo"
+                                className="selectCreate"
+                                onChange={handleChangePublicationData}
+                                value={publicationData.metodo}
+                                required
+                            >
+                                <option value="">Selecciona Método:</option>
+                                <option value="tradicional">Tradicional</option>
+                                <option value="digital">Digital</option>
+                            </select>
+                        </label>
+                        <label className="labelCreate">
+                            Categoría artística <span className="required">*</span>
+                            <select
+                                name="categoria_artistica"
+                                className="selectCreate"
+                                onChange={handleChangePublicationData}
+                                value={publicationData.categoria_artistica}
+                                required
+                            >
+                                <option value="">Selecciona Categoría:</option>
+                                <option value="ilustración">Ilustración</option>
+                                <option value="diseño gráfico">Diseño gráfico</option>
+                                <option value="escultura">Escultura</option>
+                                <option value="modelado 3D">Modelado 3D</option>
+                                <option value="animación">Animación</option>
+                            </select>
+                        </label>
+                    </div>
+                </section>
+                {publicationData.materiales.map((material, index) => (
+                    <div key={index} className="material-form">
+                        <label>
+                            Nombre del material <span className="required">*</span>:
+                            <input
+                                type="text"
+                                name="nombre"
+                                value={material.nombre}
+                                onChange={(e) => handleChangeMaterialData(index, e)}
+                                required
+                            />
+                        </label>
+                        <label>
+                            Descripción <span className="required">*</span>:
+                            <input
+                                type="text"
+                                name="descripcion"
+                                value={material.descripcion}
+                                onChange={(e) => handleChangeMaterialData(index, e)}
+                                required
+                            />
+                        </label>
+                        <label>
+                            Marca <span className="required">*</span>:
+                            <input
+                                type="text"
+                                name="marca"
+                                value={material.marca}
+                                onChange={(e) => handleChangeMaterialData(index, e)}
+                                required
+                            />
+                        </label>
+                        <label>
+                            Tutorial
+                            <input
+                                type="text"
+                                name="tutorial"
+                                value={material.tutorial}
+                                onChange={(e) => handleChangeMaterialData(index, e)}
+                            />
+                        </label>
+                        {/* Remove button for all but the first material */}
+                        {index !== 0 && (
+                            <button type="button" onClick={() => handleRemoveMaterial(index)}>
+                                Borrar Material
+                            </button>
+                        )}
+                    </div>
+                ))}
+
+                <button className="buttonCreateMaterial" type="button" onClick={handleAddMaterial}>
+                    Añadir Material
+                </button>
+
                 {error && <p>{error}</p>}
-                <section>
-                    <button type="submit">Crear</button>
+                <section className="botonPublicar">
+                    <button type="submit">Publicar</button>
                 </section>
             </form>
 

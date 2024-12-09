@@ -19,25 +19,25 @@
     background-color: #ffffff;
     border-radius: 15px;
     padding: 20px;
-    width: 95%; /* Amplía el ancho al 95% del viewport */
-    max-width: 1200px; /* Ajusta el ancho máximo para pantallas grandes */
-    height: calc(100vh - 40px); /* Ocupa todo el espacio restante menos 40px (superior e inferior) */
+    width: 95%; 
+    max-width: 1200px; 
+    height: calc(100vh - 40px); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
-    overflow-y: auto; /* Habilita el desplazamiento vertical */
-    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    overflow-y: auto; 
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    scroll-behavior: smooth; /* Suaviza el scroll */
+    scroll-behavior: smooth; 
 }
 
 /* Perfil */
 .profileModal {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Alinea el avatar y el nombre en el centro verticalmente */
-    gap: 15px; /* Espacio entre el avatar y el contenedor de texto */
-    position: absolute; /* Posicionamiento absoluto */
+    align-items: center;
+    gap: 15px; 
+    position: absolute; 
     top: 3%;
     left: 3%;
 }
@@ -45,8 +45,8 @@
 
 .profileModal .info {
     display: flex;
-    flex-direction: column; /* Coloca el nombre encima de la fecha */
-    align-items: flex-start; /* Alinea los textos a la izquierda */
+    flex-direction: column; 
+    align-items: flex-start;
 }
 
 .AvatarNameModal{
@@ -129,22 +129,22 @@
 /* Button */
 .modal-content .closeModal {
     position: absolute; /* Se mantiene visible durante el scroll */
-    top: 10px; /* Fija el botón a 10px desde la parte superior del modal */
-    right: 10px; /* Margen derecho dentro del modal */
+    top: 10px; 
+    right: 10px; 
     background-color: #4037FF;
     color: #FFFFFF;
     border: none;
-    border-radius: 50%; /* Asegura que sea completamente redondo */
-    width: 50px; /* Tamaño consistente */
-    height: 50px; /* Tamaño consistente */
-    font-size: 1.2rem; /* Ajusta el tamaño del texto */
+    border-radius: 50%; 
+    width: 50px;
+    height: 50px; 
+    font-size: 1.2rem; 
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Asegura que el botón esté siempre encima del contenido */
+    z-index: 1000; 
     transition: background-color 0.3s ease, transform 0.3s ease;
-    display: flex; /* Asegura que el contenido esté centrado */
-    align-items: center; /* Centra verticalmente el texto */
+    display: flex; 
+    align-items: center; 
     justify-content: center; 
 }
 

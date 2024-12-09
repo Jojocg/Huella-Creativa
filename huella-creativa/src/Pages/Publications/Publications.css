@@ -169,66 +169,71 @@
 /* Sección de Anuncios */
 .advertisement-section {
     display: flex;
-    align-items: center; /* Centra verticalmente los elementos */
-    justify-content: space-between; /* Separa los elementos horizontales */
-    padding: 40px 5%; /* Espaciado interno */
-    background-color: #f4f4f4; /* Fondo gris claro */
-    margin: 0; /* Sin margen externo */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras para realce */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
-    gap: 20px; /* Espaciado entre elementos */
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 40px 5%; 
+    background-color: #f4f4f4; 
+    margin: 0; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    flex-wrap: wrap; 
+    gap: 20px; 
 }
 
 .advertisement-header {
     flex: 1; /* Ocupa todo el espacio disponible */
-    text-align: left; /* Alinea el texto a la izquierda */
-    margin-right: 20px; /* Espacio a la derecha */
+    text-align: left; 
+    margin-right: 20px; 
 }
 
 .advertisement-header h1 {
-    font-size: 2rem; /* Tamaño del título */
-    font-weight: 700; /* Negrita */
-    color: #0F1020; /* Color principal */
-    margin-bottom: 10px; /* Espaciado debajo */
+    font-size: 2rem; 
+    font-weight: 700; 
+    color: #0F1020; 
+    margin-bottom: 10px; 
 }
 
 .advertisement-header h1 span {
-    color: #4037FF; /* Color destacado */
+    color: #4037FF; 
 }
 
 .advertisement-header p {
-    font-size: 1.2rem; /* Tamaño del texto */
-    color: #4037FF; /* Color azul */
-    font-weight: 500; /* Seminegrita */
-    margin-top: 5px; /* Espaciado encima */
+    font-size: 1.2rem; 
+    color: #4037FF; 
+    font-weight: 500; 
+    margin-top: 5px; 
 }
 
 /* Grid de anuncios */
 .advertisement-grid {
     display: flex;
-    gap: 20px; /* Espaciado entre anuncios */
-    flex: 3; /* Ocupa más espacio que el encabezado */
-    flex-wrap: wrap; /* Ajusta elementos en varias filas si es necesario */
-    justify-content: space-evenly; /* Espaciado uniforme entre tarjetas */
+    gap: 20px; 
+    flex: 3; 
+    flex-wrap: wrap; 
+    justify-content: space-evenly; 
 }
 
 /* Estilo de tarjeta de anuncio */
 .ad-card {
-    flex: 1 1 calc(33.333% - 20px); /* Ajusta el tamaño dinámicamente */
-    max-width: 300px; /* Limita el ancho máximo */
-    background: white; /* Fondo blanco */
-    border-radius: 15px; /* Bordes redondeados */
-    padding: 20px; /* Espaciado interno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombras para realce */
-    text-align: center; /* Centra el contenido */
-    position: relative; /* Para posicionar etiquetas */
-    overflow: hidden; /* Evita que los elementos desborden */
+    flex: 1 1 calc(33.333% - 20px); 
+    max-width: 300px; 
+    background: white; 
+    border-radius: 15px; 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    position: relative; 
+    overflow: hidden; 
+    cursor: pointer;
+}
+
+.ad-card:hover {
+    transform: scale(1.05);
 }
 
 .ad-card img {
-    max-width: 100%; /* Imagen ocupa todo el ancho */
-    border-radius: 10px; /* Bordes redondeados */
-    margin-bottom: 15px; /* Espaciado debajo */
+    max-width: 100%; 
+    border-radius: 10px; 
+    margin-bottom: 15px; 
 }
 
 .ad-card p {
@@ -240,18 +245,18 @@
 
 /* Etiquetas de descuento */
 .ad-card::after {
-    content: attr(data-badge); /* Usa el atributo data-badge como contenido */
+    content: attr(data-badge); 
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #BA23AD; /* Color morado */
-    color: white; /* Texto blanco */
+    background-color: #C315BF; 
+    color: white; 
     font-size: 0.9rem;
     font-weight: bold;
-    padding: 5px 10px; /* Espaciado interno */
-    border-radius: 50px; /* Forma de círculo/ovalado */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras */
-    z-index: 2; /* Encima de la tarjeta */
+    padding: 5px 10px; 
+    border-radius: 50px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    z-index: 2; 
 }
 
 
@@ -262,33 +267,38 @@
     border: none;
     background: none;
     cursor: pointer;
-    position: relative; 
-    width: 50px; 
-    height: 50px; 
-    margin-left: auto; 
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
 }
 
 .gallery-info-publication .btn-arrow-publication img {
     display: block;
-    width: 100%; 
-    height: 100%; 
-    z-index: 10; 
+    width: 40px;
+    height: 40px;
+    z-index: 10;
     opacity: 1;
-    transition: opacity 0.3s ease; 
+    transition: opacity 0.3s ease;
 }
 
 .gallery-info-publication .btn-arrow-publication::after {
     content: '';
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    background-image: url('/flechas-21.svg'); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/flechas-21.svg');
     background-size: cover;
     background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+}
+
+.gallery-info-publication .btn-arrow-publication:hover img {
     opacity: 0; 
-    transition: opacity 0.3s ease; 
 }
 
 .gallery-info-publication .btn-arrow-publication:hover::after {
